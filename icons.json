@@ -1,0 +1,24 @@
+{
+  "name": "我的图标库",
+  "version": "1.0.0",
+  "description": "团队统一图标资源管理",
+  "groups": {
+    "common": { "label": "通用", "color": "#6366f1" },
+    "navigation": { "label": "导航", "color": "#10b981" },
+    "action": { "label": "操作", "color": "#f59e0b" }
+  },
+  "icons": [
+    { "id": "search",      "name": "搜索",   "group": "common",     "tags": ["常用", "查找"] },
+    { "id": "close",       "name": "关闭",   "group": "common",     "tags": ["常用"] },
+    { "id": "settings",    "name": "设置",   "group": "common",     "tags": ["常用", "系统"] },
+    { "id": "user",        "name": "用户",   "group": "common",     "tags": ["常用", "个人中心"] },
+    { "id": "home",        "name": "首页",   "group": "navigation", "tags": ["常用", "底部栏"] },
+    { "id": "arrow-left",  "name": "左箭头", "group": "navigation", "tags": ["返回"] },
+    { "id": "arrow-right", "name": "右箭头", "group": "navigation", "tags": ["前进"] },
+    { "id": "menu",        "name": "菜单",   "group": "navigation", "tags": ["常用", "汉堡菜单"] },
+    { "id": "edit",        "name": "编辑",   "group": "action",     "tags": ["常用", "修改"] },
+    { "id": "delete",      "name": "删除",   "group": "action",     "tags": ["危险"] },
+    { "id": "download",    "name": "下载",   "group": "action",     "tags": ["导出"] },
+    { "id": "share",       "name": "分享",   "group": "action",     "tags": ["社交"] }
+  ]
+}
