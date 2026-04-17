@@ -860,7 +860,6 @@ function matchesSearch(icon) {
 
 function render() {
     const container = document.getElementById('gridContainer');
-    const emptyState = document.getElementById('emptyState');
 
     // Filter icons
     let icons = DATA.icons.filter(icon => {
@@ -875,15 +874,18 @@ function render() {
         grouped[icon.group].push(icon);
     });
 
-    // Clear (keep empty state)
+    // Clear
     container.innerHTML = '';
 
     if (icons.length === 0) {
-        emptyState.style.display = '';
-        container.appendChild(emptyState);
+        container.innerHTML = `
+            <div class="empty-state">
+                <div class="empty-icon">🔍</div>
+                <h3>未找到匹配的图标</h3>
+                <p>试试其他关键词或切换分组</p>
+            </div>`;
         return;
     }
-    emptyState.style.display = 'none';
 
     // Render groups
     for (const [groupKey, groupIcons] of Object.entries(grouped)) {
