@@ -1,0 +1,9 @@
+{
+  "name": "icon-library",
+  "version": "1.0.0",
+  "description": "Auto-sync icon library",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/build.js"
+  }
+}
