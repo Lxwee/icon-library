@@ -22,6 +22,10 @@
     "fenbufenxiang": {
       "label": "分部分项",
       "color": "#8b5cf6"
+    },
+    "filetype": {
+      "label": "文件类型",
+      "color": "#14b8a6"
     }
   },
   "icons": [
@@ -225,6 +229,202 @@
       "baseId": "content-covert-project",
       "name": "隐蔽工程",
       "group": "fenbufenxiang",
+      "style": "color"
+    },
+    {
+      "id": "knowledge-base-color",
+      "baseId": "knowledge-base",
+      "name": "知识库",
+      "group": "filetype",
+      "style": "color"
+    },
+    {
+      "id": "folder-color",
+      "baseId": "folder",
+      "name": "文件夹",
+      "group": "filetype",
+      "style": "color"
+    },
+    {
+      "id": "document-color",
+      "baseId": "document",
+      "name": "文件",
+      "group": "filetype",
+      "style": "color"
+    },
+    {
+      "id": "txt-color",
+      "baseId": "txt",
+      "name": "txt",
+      "group": "filetype",
+      "style": "color"
+    },
+    {
+      "id": "documentation-color",
+      "baseId": "documentation",
+      "name": "文件 文档",
+      "group": "filetype",
+      "style": "color"
+    },
+    {
+      "id": "sheet-color",
+      "baseId": "sheet",
+      "name": "表格",
+      "group": "filetype",
+      "style": "color"
+    },
+    {
+      "id": "ppt-color",
+      "baseId": "ppt",
+      "name": "ppt",
+      "group": "filetype",
+      "style": "color"
+    },
+    {
+      "id": "model-color",
+      "baseId": "model",
+      "name": "模型",
+      "group": "filetype",
+      "style": "color"
+    },
+    {
+      "id": "draft-document-color",
+      "baseId": "draft-document",
+      "name": "草稿文件",
+      "group": "filetype",
+      "style": "color"
+    },
+    {
+      "id": "pictures-photos-color",
+      "baseId": "pictures-photos",
+      "name": "图片照片",
+      "group": "filetype",
+      "style": "color"
+    },
+    {
+      "id": "video-color",
+      "baseId": "video",
+      "name": "视频",
+      "group": "filetype",
+      "style": "color"
+    },
+    {
+      "id": "audio-color",
+      "baseId": "audio",
+      "name": "音频",
+      "group": "filetype",
+      "style": "color"
+    },
+    {
+      "id": "compressed-package-color",
+      "baseId": "compressed-package",
+      "name": "压缩包",
+      "group": "filetype",
+      "style": "color"
+    },
+    {
+      "id": "unknown-file-color",
+      "baseId": "unknown-file",
+      "name": "未知文件",
+      "group": "filetype",
+      "style": "color"
+    },
+    {
+      "id": "pdf-color",
+      "baseId": "pdf",
+      "name": "pdf",
+      "group": "filetype",
+      "style": "color"
+    },
+    {
+      "id": "e-book-text-color",
+      "baseId": "e-book-text",
+      "name": "电子书 文本",
+      "group": "filetype",
+      "style": "color"
+    },
+    {
+      "id": "word-color",
+      "baseId": "word",
+      "name": "word",
+      "group": "filetype",
+      "style": "color"
+    },
+    {
+      "id": "sheet-1-color",
+      "baseId": "sheet-1",
+      "name": "表格",
+      "group": "filetype",
+      "style": "color"
+    },
+    {
+      "id": "online-ppt-color",
+      "baseId": "online-ppt",
+      "name": "在线ppt",
+      "group": "filetype",
+      "style": "color"
+    },
+    {
+      "id": "online-form-color",
+      "baseId": "online-form",
+      "name": "在线表格",
+      "group": "filetype",
+      "style": "color"
+    },
+    {
+      "id": "notion-color",
+      "baseId": "notion",
+      "name": "notion",
+      "group": "filetype",
+      "style": "color"
+    },
+    {
+      "id": "onlyoffice-color",
+      "baseId": "onlyoffice",
+      "name": "onlyoffice",
+      "group": "filetype",
+      "style": "color"
+    },
+    {
+      "id": "mind-map-color",
+      "baseId": "mind-map",
+      "name": "思维导图",
+      "group": "filetype",
+      "style": "color"
+    },
+    {
+      "id": "template-library-color",
+      "baseId": "template-library",
+      "name": "模板库",
+      "group": "filetype",
+      "style": "color"
+    },
+    {
+      "id": "online-documentation-color",
+      "baseId": "online-documentation",
+      "name": "在线文档",
+      "group": "filetype",
+      "style": "color"
+    },
+    {
+      "id": "qualification-color",
+      "baseId": "qualification",
+      "name": "资质",
+      "group": "filetype",
+      "style": "color"
+    },
+    {
+      "id": "picture-color",
+      "baseId": "picture",
+      "name": "图片",
+      "group": "filetype",
+      "style": "color"
+    },
+    {
+      "id": "drawing-color",
+      "baseId": "drawing",
+      "name": "图纸",
+      "group": "filetype",
       "style": "color"
     }
   ]
