@@ -18,6 +18,10 @@
     "organization": {
       "label": "组织架构",
       "color": "#6366f1"
+    },
+    "fenbufenxiang": {
+      "label": "分部分项",
+      "color": "#8b5cf6"
     }
   },
   "icons": [
@@ -179,6 +183,48 @@
       "baseId": "level-labor-fill-on",
       "name": "劳务",
       "group": "organization",
+      "style": "color"
+    },
+    {
+      "id": "content-item-color",
+      "baseId": "content-item",
+      "name": "分项工程",
+      "group": "fenbufenxiang",
+      "style": "color"
+    },
+    {
+      "id": "content-inspection-lot-color",
+      "baseId": "content-inspection-lot",
+      "name": "检验批",
+      "group": "fenbufenxiang",
+      "style": "color"
+    },
+    {
+      "id": "content-department-color",
+      "baseId": "content-department",
+      "name": "分部工程",
+      "group": "fenbufenxiang",
+      "style": "color"
+    },
+    {
+      "id": "content-sublist-color",
+      "baseId": "content-sublist",
+      "name": "子单位工程",
+      "group": "fenbufenxiang",
+      "style": "color"
+    },
+    {
+      "id": "content-single-color",
+      "baseId": "content-single",
+      "name": "单位工程",
+      "group": "fenbufenxiang",
+      "style": "color"
+    },
+    {
+      "id": "content-covert-project-color",
+      "baseId": "content-covert-project",
+      "name": "隐蔽工程",
+      "group": "fenbufenxiang",
       "style": "color"
     }
   ]
