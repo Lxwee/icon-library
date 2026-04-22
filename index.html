@@ -301,7 +301,7 @@
         .icon-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(var(--cell-size, 120px), 1fr));
-            gap: 8px;
+            gap: 12px;
         }
 
         .icon-card {
@@ -318,12 +318,22 @@
             align-items: center;
             gap: 8px;
         }
+        
+        [data-theme="light"] .icon-card {
+            border: none;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.015);
+        }
 
         .icon-card:hover {
             border-color: var(--accent);
             background: var(--bg-card-hover);
             transform: translateY(-2px);
             box-shadow: var(--shadow);
+        }
+
+        [data-theme="light"] .icon-card:hover {
+            background: var(--bg-surface);
+            box-shadow: 0 0 0 1px var(--accent), 0 8px 24px rgba(0,0,0,0.04);
         }
 
         .icon-card .icon-preview {
