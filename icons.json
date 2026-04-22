@@ -458,6 +458,34 @@
       "name": "四级蓝色预警",
       "group": "warninglevel",
       "style": "color"
+    },
+    {
+      "id": "status-iii-outlined",
+      "baseId": "status-iii",
+      "name": "状态=iii",
+      "group": "common",
+      "style": "outlined"
+    },
+    {
+      "id": "status-ii-outlined",
+      "baseId": "status-ii",
+      "name": "状态=ii",
+      "group": "common",
+      "style": "outlined"
+    },
+    {
+      "id": "status-i-outlined",
+      "baseId": "status-i",
+      "name": "状态=i",
+      "group": "common",
+      "style": "outlined"
+    },
+    {
+      "id": "status-iv-outlined",
+      "baseId": "status-iv",
+      "name": "状态=iv",
+      "group": "common",
+      "style": "outlined"
     }
   ]
 }
