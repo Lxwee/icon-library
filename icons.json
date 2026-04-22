@@ -404,6 +404,90 @@
       "name": "打雷",
       "group": "weather",
       "style": "outlined"
+    },
+    {
+      "id": "type-zip-filled",
+      "baseId": "type-zip",
+      "name": "zip",
+      "group": "filetype",
+      "style": "filled"
+    },
+    {
+      "id": "type-word-filled",
+      "baseId": "type-word",
+      "name": "word",
+      "group": "filetype",
+      "style": "filled"
+    },
+    {
+      "id": "type-excel-filled",
+      "baseId": "type-excel",
+      "name": "Excel",
+      "group": "filetype",
+      "style": "filled"
+    },
+    {
+      "id": "type-img-filled",
+      "baseId": "type-img",
+      "name": "img",
+      "group": "filetype",
+      "style": "filled"
+    },
+    {
+      "id": "type-audio-filled",
+      "baseId": "type-audio",
+      "name": "音频",
+      "group": "filetype",
+      "style": "filled"
+    },
+    {
+      "id": "type-pdf-filled",
+      "baseId": "type-pdf",
+      "name": "pdf",
+      "group": "filetype",
+      "style": "filled"
+    },
+    {
+      "id": "type-model-filled",
+      "baseId": "type-model",
+      "name": "模型",
+      "group": "filetype",
+      "style": "filled"
+    },
+    {
+      "id": "type-code-filled",
+      "baseId": "type-code",
+      "name": "code",
+      "group": "filetype",
+      "style": "filled"
+    },
+    {
+      "id": "type-unknown-filled",
+      "baseId": "type-unknown",
+      "name": "未知",
+      "group": "filetype",
+      "style": "filled"
+    },
+    {
+      "id": "type-ppt-filled",
+      "baseId": "type-ppt",
+      "name": "PPT",
+      "group": "filetype",
+      "style": "filled"
+    },
+    {
+      "id": "type-ppt2-filled",
+      "baseId": "type-ppt2",
+      "name": "PPT",
+      "group": "filetype",
+      "style": "filled"
+    },
+    {
+      "id": "type-txt-filled",
+      "baseId": "type-txt",
+      "name": "Txt",
+      "group": "filetype",
+      "style": "filled"
     }
   ]
 }
