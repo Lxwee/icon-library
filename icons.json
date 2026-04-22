@@ -18,6 +18,10 @@
     "warninglevel": {
       "label": "预警等级",
       "color": "#f43f5e"
+    },
+    "weather": {
+      "label": "天气",
+      "color": "#8b5cf6"
     }
   },
   "icons": [
@@ -344,6 +348,62 @@
       "name": "四级蓝色预警",
       "group": "warninglevel",
       "style": "color"
+    },
+    {
+      "id": "weather-cloudy-outlined",
+      "baseId": "weather-cloudy",
+      "name": "多云",
+      "group": "weather",
+      "style": "outlined"
+    },
+    {
+      "id": "weather-sunny-outlined",
+      "baseId": "weather-sunny",
+      "name": "晴天",
+      "group": "weather",
+      "style": "outlined"
+    },
+    {
+      "id": "weather-cloud-outlined",
+      "baseId": "weather-cloud",
+      "name": "阴天",
+      "group": "weather",
+      "style": "outlined"
+    },
+    {
+      "id": "weather-rain-outlined",
+      "baseId": "weather-rain",
+      "name": "下雨",
+      "group": "weather",
+      "style": "outlined"
+    },
+    {
+      "id": "weather-snow-outlined",
+      "baseId": "weather-snow",
+      "name": "下雪",
+      "group": "weather",
+      "style": "outlined"
+    },
+    {
+      "id": "weather-hail-outlined",
+      "baseId": "weather-hail",
+      "name": "冰雹",
+      "group": "weather",
+      "style": "outlined"
+    },
+    {
+      "id": "weather-fog-outlined",
+      "baseId": "weather-fog",
+      "name": "有雾",
+      "group": "weather",
+      "style": "outlined"
+    },
+    {
+      "id": "weather-thunder-outlined",
+      "baseId": "weather-thunder",
+      "name": "打雷",
+      "group": "weather",
+      "style": "outlined"
     }
   ]
 }
