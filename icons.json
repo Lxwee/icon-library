@@ -26,6 +26,10 @@
     "filetype": {
       "label": "文件类型",
       "color": "#14b8a6"
+    },
+    "warninglevel": {
+      "label": "预警等级",
+      "color": "#f43f5e"
     }
   },
   "icons": [
@@ -425,6 +429,34 @@
       "baseId": "drawing",
       "name": "图纸",
       "group": "filetype",
+      "style": "color"
+    },
+    {
+      "id": "status-ii-color",
+      "baseId": "status-ii",
+      "name": "三级黄色预警",
+      "group": "warninglevel",
+      "style": "color"
+    },
+    {
+      "id": "status-ii-1-color",
+      "baseId": "status-ii-1",
+      "name": "二级橙色预警",
+      "group": "warninglevel",
+      "style": "color"
+    },
+    {
+      "id": "status-i-color",
+      "baseId": "status-i",
+      "name": "一级红色预警",
+      "group": "warninglevel",
+      "style": "color"
+    },
+    {
+      "id": "status-iv-color",
+      "baseId": "status-iv",
+      "name": "四级蓝色预警",
+      "group": "warninglevel",
       "style": "color"
     }
   ]
