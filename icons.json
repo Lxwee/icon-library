@@ -135,7 +135,8 @@
       "baseId": "level-item-fill-on",
       "name": "项目",
       "group": "organization",
-      "style": "color"
+      "style": "color",
+      "tags": []
     },
     {
       "id": "level-segment-fill-on-color",
@@ -154,9 +155,10 @@
     {
       "id": "level-subitem-fill-on-color",
       "baseId": "level-subitem-fill-on",
-      "name": "小项目",
+      "name": "子项目",
       "group": "organization",
-      "style": "color"
+      "style": "color",
+      "tags": []
     },
     {
       "id": "hierarchy-department-fill-on-color",
