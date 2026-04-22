@@ -667,6 +667,11 @@
             color: var(--accent);
             transform: rotate(15deg);
         }
+
+        /* Disable all transitions during theme switch to prevent snapshot lag */
+        .theme-switching, .theme-switching * {
+            transition: none !important;
+        }
     </style>
 </head>
 <body>
@@ -820,21 +825,49 @@ function initTheme() {
 }
 
 function toggleTheme() {
-    currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    if (currentTheme === 'light') {
+    const isDark = currentTheme === 'dark';
+    const nextTheme = isDark ? 'light' : 'dark';
+
+    // Disable all CSS transitions instantly so the new snapshot catches the FINAL state
+    document.body.classList.add('theme-switching');
+
+    if (!document.startViewTransition) {
+        applyTheme(nextTheme);
+        requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+                document.body.classList.remove('theme-switching');
+            });
+        });
+        return;
+    }
+
+    const transition = document.startViewTransition(() => {
+        applyTheme(nextTheme);
+    });
+
+    transition.finished.finally(() => {
+        document.body.classList.remove('theme-switching');
+    });
+}
+
+function applyTheme(theme) {
+    currentTheme = theme;
+    if (theme === 'light') {
         document.documentElement.setAttribute('data-theme', 'light');
     } else {
         document.documentElement.removeAttribute('data-theme');
     }
-    localStorage.setItem('icon-lib-theme', currentTheme);
+    localStorage.setItem('icon-lib-theme', theme);
     updateThemeUI();
-    // Update icon preview colors
+    
     const colorPicker = document.getElementById('previewColor');
-    const newDefault = currentTheme === 'light' ? colorPicker.dataset.light : colorPicker.dataset.dark;
-    colorPicker.value = newDefault;
-    document.querySelectorAll('.icon-card .icon-preview svg').forEach(svg => {
-        svg.style.color = newDefault;
-    });
+    if (colorPicker) {
+        const newDefault = theme === 'light' ? colorPicker.dataset.light : colorPicker.dataset.dark;
+        colorPicker.value = newDefault;
+        document.querySelectorAll('.icon-card .icon-preview svg').forEach(svg => {
+            svg.style.color = newDefault;
+        });
+    }
 }
 
 function updateThemeUI() {
