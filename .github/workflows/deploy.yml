@@ -29,8 +29,11 @@ jobs:
         with:
           node-version: 20
 
-      - name: Build Icon Bundle
+      - name: Build Icon Bundle (legacy full bundle)
         run: node scripts/build.js
+
+      - name: Build Icon Loader (on-demand)
+        run: node scripts/build-loader.js
 
       - name: Setup Pages
         uses: actions/configure-pages@v5

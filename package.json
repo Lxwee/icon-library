@@ -4,6 +4,8 @@
   "description": "Auto-sync icon library",
   "private": true,
   "scripts": {
-    "build": "node scripts/build.js"
+    "build": "node scripts/build.js",
+    "build:loader": "node scripts/build-loader.js",
+    "build:all": "node scripts/build.js && node scripts/build-loader.js"
   }
 }
