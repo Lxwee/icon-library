@@ -338,11 +338,13 @@
             background: var(--bg-card-hover);
             transform: translateY(-2px);
             box-shadow: var(--shadow);
+            z-index: 20;
         }
 
         [data-theme="light"] .icon-card:hover {
             background: var(--bg-surface);
             box-shadow: 0 0 0 1px var(--accent), 0 8px 24px rgba(0,0,0,0.04);
+            z-index: 20;
         }
 
         .icon-card .icon-preview {
@@ -369,31 +371,29 @@
 
         .icon-card .card-actions {
             position: absolute;
-            bottom: 8px;
-            left: 50%;
-            transform: translateX(-50%) translateY(10px);
-            display: flex;
-            gap: 4px;
+            inset: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 6px;
+            padding: 8px;
             background: var(--bg-surface);
-            padding: 4px 6px;
-            border-radius: 8px;
-            border: 1px solid var(--border);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-radius: inherit;
             opacity: 0;
             transition: all 0.2s ease;
             pointer-events: none;
+            z-index: 5;
         }
 
         .icon-card:hover .card-actions {
-            opacity: 1;
-            transform: translateX(-50%) translateY(0);
+            opacity: 0.92;
             pointer-events: auto;
         }
 
         .action-btn {
-            width: 30px;
-            height: 30px;
-            border-radius: 6px;
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
             border: none;
             background: transparent;
             color: var(--text-2);
@@ -408,14 +408,14 @@
         .action-btn::after {
             content: attr(data-tooltip);
             position: absolute;
-            bottom: calc(100% + 4px);
+            bottom: calc(100% + 8px);
             left: 50%;
             transform: translateX(-50%) translateY(4px);
             background: var(--bg-surface);
             color: var(--text-1);
-            font-size: 11px;
-            padding: 4px 8px;
-            border-radius: 4px;
+            font-size: 12px;
+            padding: 6px 10px;
+            border-radius: 6px;
             white-space: nowrap;
             opacity: 0;
             pointer-events: none;
@@ -430,9 +430,22 @@
             transform: translateX(-50%) translateY(0);
         }
 
+        /* 第三和第四个按钮（下排）的文字提示显示在下方 */
+        .action-btn:nth-child(n+3)::after {
+            bottom: auto;
+            top: calc(100% + 8px);
+            transform: translateX(-50%) translateY(-4px);
+        }
+
         .action-btn:hover {
             background: var(--bg-input);
             color: var(--accent);
+        }
+
+        .action-btn svg {
+            width: 20px;
+            height: 20px;
+            stroke-width: 1.5px;
         }
 
         /* Global Toast */
@@ -483,10 +496,13 @@
             background: var(--bg-surface);
             border: 1px solid var(--border);
             border-radius: 16px;
-            width: 520px;
-            max-width: 92vw;
-            max-height: 90vh;
-            overflow-y: auto;
+            width: 880px;
+            max-width: 95vw;
+            height: 85vh;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
             box-shadow: var(--modal-shadow);
             animation: modalIn 0.25s ease;
         }
@@ -497,13 +513,17 @@
         }
 
         .modal-header {
-            padding: 24px 24px 0;
+            padding: 16px 24px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            border-bottom: 1px solid var(--border);
+            flex-shrink: 0;
+            background: var(--bg-surface);
+            z-index: 10;
         }
 
-        .modal-header h2 { font-size: 18px; font-weight: 600; }
+        .modal-header h2 { font-size: 16px; font-weight: 600; }
 
         .modal-close {
             width: 32px;
@@ -519,13 +539,34 @@
             transition: all 0.2s;
         }
 
-        .modal-close:hover { background: var(--danger); color: #fff; border-color: var(--danger); }
+        .modal-close:hover { background: var(--bg-input); color: var(--text-1); border-color: var(--text-3); }
 
-        .modal-body { padding: 24px; }
+        .modal-body { 
+            padding: 24px; 
+            overflow-y: auto;
+            flex: 1;
+            display: flex;
+            gap: 28px;
+        }
+
+        .modal-col-left {
+            flex: 3;
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .modal-col-right {
+            flex: 2;
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+        }
 
         .modal-preview {
             display: flex;
             justify-content: center;
+            align-items: center;
             padding: 32px;
             background: var(--bg-card);
             border-radius: var(--radius);
@@ -534,8 +575,8 @@
         }
 
         .modal-preview svg {
-            width: 80px;
-            height: 80px;
+            width: 140px;
+            height: 140px;
         }
 
         .modal-info { margin-bottom: 20px; }
@@ -571,6 +612,116 @@
             color: var(--text-2);
         }
 
+        /* 智能调色盘 */
+        .modal-color-editor {
+            margin-bottom: 20px;
+            display: none;
+        }
+        .color-editor-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        .color-presets {
+            display: flex;
+            gap: 8px;
+        }
+        .preset-btn {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.2s;
+            box-shadow: inset 0 0 0 1px rgba(0,0,0,0.1);
+        }
+        .preset-btn:hover { transform: scale(1.2); }
+        .reset-btn {
+            background: var(--bg-input) !important;
+            box-shadow: none;
+            color: var(--text-2);
+            font-size: 12px;
+            padding: 0 10px;
+            border-radius: 6px;
+            width: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--border);
+            cursor: pointer;
+        }
+        .reset-btn:hover { color: var(--text-1); border-color: var(--text-2); }
+        .gradient-link {
+            width: 20px;
+            height: 2px;
+            background: var(--border);
+            margin: 0 4px;
+            align-self: center;
+        }
+        .extracted-colors {
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 10px;
+            align-items: center;
+        }
+        .color-picker-wrap-small {
+            position: relative;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border: 2px solid var(--bg-card);
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .color-picker-wrap-small:hover { transform: scale(1.1); }
+        .color-picker-wrap-small input[type="color"] {
+            position: absolute;
+            top: -10px; left: -10px; width: 50px; height: 50px;
+            cursor: pointer;
+        }
+
+        .modal-export-actions {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        .modal-export-btn {
+            flex: 1;
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+        .modal-export-svg {
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--text-2);
+        }
+        .modal-export-svg:hover {
+            background: var(--bg-input);
+            color: var(--text-1);
+            border-color: var(--text-2);
+        }
+        .modal-export-png {
+            border: none;
+            background: var(--accent);
+            color: #fff;
+        }
+        .modal-export-png:hover {
+            filter: brightness(1.1);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+        }
+
         .code-tabs {
             display: flex;
             gap: 4px;
@@ -589,7 +740,7 @@
             transition: all 0.2s;
         }
 
-        .code-tab.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+        .code-tab.active { background: transparent; color: var(--accent); border-color: var(--accent); }
 
         .code-block {
             background: var(--bg-card);
@@ -601,7 +752,9 @@
             line-height: 1.6;
             color: var(--text-2);
             position: relative;
-            overflow-x: auto;
+            overflow-y: auto;
+            overflow-x: hidden;
+            height: 180px;
             white-space: pre-wrap;
             word-break: break-all;
         }
@@ -729,10 +882,6 @@
                     <span>预览</span>
                     <input type="color" id="previewColor" value="#eeeef4" title="修改图标预览颜色" data-dark="#eeeef4" data-light="#1a1a2e">
                 </div>
-                <label class="color-picker-wrap" style="cursor:pointer">
-                    <span>尺寸</span>
-                    <input type="range" class="size-slider" id="sizeSlider" min="80" max="200" value="120">
-                </label>
                 <button class="theme-toggle" id="themeToggle" title="切换明暗模式">🌙</button>
             </div>
         </header>
@@ -764,35 +913,77 @@
             <button class="modal-close" onclick="closeModal()">✕</button>
         </div>
         <div class="modal-body">
-            <div class="modal-preview" id="modalPreview"></div>
-            <div class="modal-info">
-                <div class="modal-info-row">
-                    <span class="modal-info-label">引用 ID</span>
-                    <span class="modal-info-value" id="modalId" style="font-family:'JetBrains Mono',monospace"></span>
+            <!-- 左栏：基本信息 -->
+            <div class="modal-col-left">
+                <div class="modal-preview" id="modalPreview"></div>
+                <div class="modal-info">
+                    <div class="modal-info-row">
+                        <span class="modal-info-label">引用 ID</span>
+                        <span class="modal-info-value" id="modalId" style="font-family:'JetBrains Mono',monospace"></span>
+                    </div>
+                    <div class="modal-info-row">
+                        <span class="modal-info-label">名称</span>
+                        <span class="modal-info-value" id="modalName"></span>
+                    </div>
+                    <div class="modal-info-row">
+                        <span class="modal-info-label">分组</span>
+                        <span class="modal-info-value" id="modalGroup"></span>
+                    </div>
+                    <div class="modal-info-row">
+                        <span class="modal-info-label">标签</span>
+                        <span class="modal-info-value" id="modalTags"></span>
+                    </div>
                 </div>
-                <div class="modal-info-row">
-                    <span class="modal-info-label">名称</span>
-                    <span class="modal-info-value" id="modalName"></span>
+
+                <div class="code-tabs" id="codeTabs" style="margin-top: 8px;">
+                    <button class="code-tab active" data-format="svg">SVG 代码</button>
+                    <button class="code-tab" data-format="img">IMG 标签</button>
+                    <button class="code-tab" data-format="vue">Vue</button>
+                    <button class="code-tab" data-format="react">React</button>
+                    <button class="code-tab" data-format="css">CSS</button>
                 </div>
-                <div class="modal-info-row">
-                    <span class="modal-info-label">分组</span>
-                    <span class="modal-info-value" id="modalGroup"></span>
-                </div>
-                <div class="modal-info-row">
-                    <span class="modal-info-label">标签</span>
-                    <span class="modal-info-value" id="modalTags"></span>
+                <div class="code-block" id="codeBlock">
+                    <button class="copy-btn" id="codeCopyBtn" onclick="copyCode()">复制</button>
+                    <code id="codeContent"></code>
                 </div>
             </div>
-            <div class="code-tabs" id="codeTabs">
-                <button class="code-tab active" data-format="svg">SVG 代码</button>
-                <button class="code-tab" data-format="img">IMG 标签</button>
-                <button class="code-tab" data-format="vue">Vue</button>
-                <button class="code-tab" data-format="react">React</button>
-                <button class="code-tab" data-format="css">CSS</button>
-            </div>
-            <div class="code-block" id="codeBlock">
-                <button class="copy-btn" id="codeCopyBtn" onclick="copyCode()">复制</button>
-                <code id="codeContent"></code>
+
+            <!-- 右栏：操作区域 -->
+            <div class="modal-col-right">
+                <!-- 智能调色盘 -->
+                <div class="modal-color-editor" id="modalColorEditor">
+                    <div class="modal-info-row" style="margin-bottom: 16px; justify-content: space-between; align-items: center;">
+                        <span class="modal-info-label" style="width: auto; color: var(--text-1); font-weight: 600; font-size: 14px;">🎨 智能调色盘</span>
+                        <button class="preset-btn reset-btn" id="resetColorBtn" title="重置为原始颜色">重置颜色</button>
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 16px; margin-bottom: 24px;">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <span style="font-size: 12px; color: var(--text-3); width: 60px; flex-shrink: 0;">一键预设</span>
+                            <div class="color-presets" id="colorPresets">
+                                <button class="preset-btn" data-preset="#6366f1" style="background:#6366f1" title="一键替换为：科技蓝"></button>
+                                <button class="preset-btn" data-preset="#10b981" style="background:#10b981" title="一键替换为：成功绿"></button>
+                                <button class="preset-btn" data-preset="#ef4444" style="background:#ef4444" title="一键替换为：警示红"></button>
+                                <button class="preset-btn" data-preset="#f59e0b" style="background:#f59e0b" title="一键替换为：活力橙"></button>
+                                <button class="preset-btn" data-preset="#8b5cf6" style="background:#8b5cf6" title="一键替换为：魅力紫"></button>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: flex-start; gap: 12px;">
+                            <span style="font-size: 12px; color: var(--text-3); width: 60px; flex-shrink: 0; line-height: 28px;">手动微调</span>
+                            <div class="extracted-colors" id="extractedColors" style="flex: 1;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-export-actions">
+                    <button class="modal-export-btn modal-export-svg" onclick="downloadModalSVG()">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                        下载 SVG
+                    </button>
+                    <button class="modal-export-btn modal-export-png" onclick="downloadModalPNG()">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                        下载 PNG
+                    </button>
+                </div>
             </div>
         </div>
     </div>
@@ -818,6 +1009,193 @@ let currentSearch = '';
 let currentFormat = 'svg';
 let currentIconId = null;
 let currentTheme = localStorage.getItem('icon-lib-theme') || 'dark';
+
+// ===== Smart Color Palette State & Logic =====
+let currentEditedSvgString = null;
+let editingSvgOriginal = null;
+let colorMapping = {};
+
+function hexToRgb(hex) {
+    hex = hex.replace(/^#/, '');
+    if (hex.length === 3) hex = hex.split('').map(c => c+c).join('');
+    return [parseInt(hex.substring(0,2),16), parseInt(hex.substring(2,4),16), parseInt(hex.substring(4,6),16)];
+}
+
+function colorDistance(hex1, hex2) {
+    const [r1,g1,b1] = hexToRgb(hex1);
+    const [r2,g2,b2] = hexToRgb(hex2);
+    return Math.sqrt((r1-r2)**2 + (g1-g2)**2 + (b1-b2)**2);
+}
+
+function parseSvgColors(svgString) {
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(svgString, 'image/svg+xml');
+    const svg = doc.querySelector('svg');
+    if(!svg) return [];
+
+    const rawColors = new Set();
+    const skipColors = new Set(['#000000','#ffffff','#fff','#000']);
+    
+    function addColor(val) {
+        if (!val || val === 'none' || val === 'currentColor' || val === 'transparent' || val.startsWith('url(')) return;
+        let hex = val.toLowerCase().trim();
+        if (hex.startsWith('#')) {
+            if (hex.length === 4) hex = '#' + hex[1]+hex[1] + hex[2]+hex[2] + hex[3]+hex[3];
+            if (!skipColors.has(hex)) rawColors.add(hex);
+        }
+    }
+
+    const elements = svg.querySelectorAll('*');
+    elements.forEach(el => {
+        addColor(el.getAttribute('fill'));
+        addColor(el.getAttribute('stroke'));
+        addColor(el.getAttribute('stop-color'));
+        if (el.style.fill) addColor(el.style.fill);
+        if (el.style.stroke) addColor(el.style.stroke);
+        if (el.style.stopColor) addColor(el.style.stopColor);
+    });
+
+    // 合并相近颜色（距离 < 40），只保留主色
+    const all = Array.from(rawColors);
+    const merged = [];
+    const used = new Set();
+    for (let i = 0; i < all.length; i++) {
+        if (used.has(i)) continue;
+        merged.push(all[i]);
+        for (let j = i + 1; j < all.length; j++) {
+            if (!used.has(j) && colorDistance(all[i], all[j]) < 40) {
+                used.add(j);
+            }
+        }
+    }
+    return merged;
+}
+
+function initColorEditor(svgString) {
+    const editor = document.getElementById('modalColorEditor');
+    const container = document.getElementById('extractedColors');
+    container.innerHTML = '';
+    colorMapping = {};
+    currentEditedSvgString = null;
+    
+    const colors = parseSvgColors(svgString);
+    if (colors.length === 0) {
+        editor.style.display = 'none';
+        return;
+    }
+    
+    editor.style.display = 'block';
+    editingSvgOriginal = svgString;
+    
+    colors.forEach((origColor, idx) => {
+        colorMapping[origColor] = origColor;
+        
+        if (idx > 0) {
+            const link = document.createElement('div');
+            link.className = 'gradient-link';
+            container.appendChild(link);
+        }
+        
+        const wrap = document.createElement('div');
+        wrap.className = 'color-picker-wrap-small';
+        wrap.title = `修改颜色: ${origColor}`;
+        
+        const input = document.createElement('input');
+        input.type = 'color';
+        input.value = origColor;
+        input.dataset.orig = origColor;
+        
+        input.addEventListener('input', (e) => {
+            colorMapping[origColor] = e.target.value;
+            applyColorMapping();
+        });
+        
+        wrap.appendChild(input);
+        container.appendChild(wrap);
+    });
+}
+
+function adjustColor(hex, amt) {
+    hex = hex.replace(/^#/, '');
+    if (hex.length === 3) hex = hex.split('').map(c => c+c).join('');
+    let r = parseInt(hex.substring(0,2), 16) + amt;
+    let g = parseInt(hex.substring(2,4), 16) + amt;
+    let b = parseInt(hex.substring(4,6), 16) + amt;
+    r = Math.max(0, Math.min(255, r));
+    g = Math.max(0, Math.min(255, g));
+    b = Math.max(0, Math.min(255, b));
+    return '#' + [r,g,b].map(x => x.toString(16).padStart(2, '0')).join('');
+}
+
+function resetColorEditor() {
+    initColorEditor(SVG_CACHE[currentIconId] || '');
+    updateEditedPreview(SVG_CACHE[currentIconId] || '');
+}
+
+function applyPresetColor(targetHex) {
+    if (!editingSvgOriginal) return;
+    const colors = Object.keys(colorMapping);
+    if(colors.length === 0) return;
+    
+    // 智能生成同色系渐变
+    colors.forEach((col, idx) => {
+        let newColor = targetHex;
+        if (idx > 0) {
+            // 每多一层颜色，亮度增加以模拟高光/渐变效果
+            newColor = adjustColor(targetHex, idx * 35); 
+        }
+        colorMapping[col] = newColor;
+    });
+    
+    // Update all color inputs in the UI
+    const inputs = document.getElementById('extractedColors').querySelectorAll('input[type="color"]');
+    inputs.forEach((input, idx) => {
+        if(colors[idx]) {
+            input.value = colorMapping[colors[idx]];
+        }
+    });
+    
+    applyColorMapping();
+}
+
+function applyColorMapping() {
+    if (!editingSvgOriginal) return;
+    
+    let newSvg = editingSvgOriginal;
+    const entries = Object.entries(colorMapping).sort((a,b) => b[0].length - a[0].length);
+    for (const [orig, newCol] of entries) {
+        if (orig !== newCol) {
+            const escapeRegExp = (string) => string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+            const re = new RegExp(escapeRegExp(orig), 'gi');
+            newSvg = newSvg.replace(re, newCol);
+        }
+    }
+    
+    currentEditedSvgString = newSvg;
+    updateEditedPreview(newSvg);
+}
+
+function updateEditedPreview(svgStr) {
+    const preview = document.getElementById('modalPreview');
+    
+    // 动态修改 SVG 中的 id，防止渐变色 ID 与底层背景网格的图标冲突导致渲染不更新
+    let previewSvg = svgStr.replace(/id="([^"]+)"/g, 'id="$1_modal"')
+                           .replace(/url\(#([^)]+)\)/g, 'url(#$1_modal)');
+                           
+    preview.innerHTML = previewSvg;
+    const svg = preview.querySelector('svg');
+    if (svg) svg.style.color = document.getElementById('previewColor').value;
+    updateCodeBlock();
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.preset-btn[data-preset]').forEach(btn => {
+        btn.addEventListener('click', () => applyPresetColor(btn.dataset.preset));
+    });
+    const resetBtn = document.getElementById('resetColorBtn');
+    if(resetBtn) resetBtn.addEventListener('click', resetColorEditor);
+});
+
 
 // ===== Theme =====
 function initTheme() {
@@ -954,9 +1332,7 @@ async function init() {
         });
     });
 
-    document.getElementById('sizeSlider').addEventListener('input', e => {
-        document.documentElement.style.setProperty('--cell-size', e.target.value + 'px');
-    });
+
 
     document.getElementById('themeToggle').addEventListener('click', toggleTheme);
 
@@ -1123,6 +1499,9 @@ function render() {
                 <div class="icon-preview">${svgContent}</div>
                 <div class="icon-name">${icon.name}</div>
                 <div class="card-actions">
+                    <button class="action-btn" data-tooltip="调色与编辑" onclick="event.stopPropagation(); openModal('${icon.id}')">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5"></circle><circle cx="17.5" cy="10.5" r=".5"></circle><circle cx="8.5" cy="7.5" r=".5"></circle><circle cx="6.5" cy="12.5" r=".5"></circle><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.836-.437-1.124-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"></path></svg>
+                    </button>
                     <button class="action-btn" data-tooltip="复制 ID" onclick="event.stopPropagation(); copyText('${icon.id}', 'ID 已复制')">
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
                     </button>
@@ -1167,9 +1546,12 @@ function openModal(iconId) {
     document.getElementById('modalTags').innerHTML = (icon.tags || []).map(t => `<span class="modal-tag">${t}</span>`).join('');
 
     const preview = document.getElementById('modalPreview');
-    preview.innerHTML = SVG_CACHE[iconId] || '';
+    const svgContent = SVG_CACHE[iconId] || '';
+    preview.innerHTML = svgContent;
     const svg = preview.querySelector('svg');
     if (svg) svg.style.color = document.getElementById('previewColor').value;
+
+    initColorEditor(svgContent);
 
     updateCodeBlock();
 
@@ -1187,7 +1569,7 @@ function updateCodeBlock() {
     const icon = DATA.icons.find(i => i.id === currentIconId);
     if (!icon) return;
 
-    const svgCode = SVG_CACHE[currentIconId] || '';
+    const svgCode = currentEditedSvgString || SVG_CACHE[currentIconId] || '';
 
     // Generate repo URL (will be updated after deployment)
     const repoBase = location.origin + location.pathname.replace(/\/[^/]*$/, '');
@@ -1244,14 +1626,37 @@ function copyText(text, successMsg = '内容已复制') {
 }
 
 function copySVG(iconId) {
-    const svg = SVG_CACHE[iconId];
+    const svg = (iconId === currentIconId && currentEditedSvgString) ? currentEditedSvgString : SVG_CACHE[iconId];
     if (svg) {
         copyText(svg, 'SVG 代码已复制');
     }
 }
 
+function downloadModalPNG() {
+    if (!currentIconId) return;
+    const name = document.getElementById('modalName').textContent || currentIconId;
+    downloadPNG(currentIconId, name);
+}
+
+function downloadModalSVG() {
+    if (!currentIconId) return;
+    const svgString = currentEditedSvgString || SVG_CACHE[currentIconId];
+    if (!svgString) return;
+    const name = document.getElementById('modalName').textContent || currentIconId;
+    const blob = new Blob([svgString], { type: 'image/svg+xml;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = `${name}.svg`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+    showToast('SVG 文件已下载');
+}
+
 function downloadPNG(iconId, filename) {
-    const svgString = SVG_CACHE[iconId];
+    const svgString = (iconId === currentIconId && currentEditedSvgString) ? currentEditedSvgString : SVG_CACHE[iconId];
     if (!svgString) return;
     
     // Create a canvas 256x256 for high res output
