@@ -2254,6 +2254,41 @@
       "name": "延时摄影",
       "group": "smartconstructionsite",
       "style": "outlined"
+    },
+    {
+      "id": "ranking-205-color",
+      "baseId": "ranking-205",
+      "name": "排名二05",
+      "group": "ranking",
+      "style": "color"
+    },
+    {
+      "id": "ranking-204-color",
+      "baseId": "ranking-204",
+      "name": "排名二04",
+      "group": "ranking",
+      "style": "color"
+    },
+    {
+      "id": "ranking-203-color",
+      "baseId": "ranking-203",
+      "name": "排名二03",
+      "group": "ranking",
+      "style": "color"
+    },
+    {
+      "id": "ranking-202-color",
+      "baseId": "ranking-202",
+      "name": "排名二02",
+      "group": "ranking",
+      "style": "color"
+    },
+    {
+      "id": "ranking-201-color",
+      "baseId": "ranking-201",
+      "name": "排名二01",
+      "group": "ranking",
+      "style": "color"
     }
   ]
 }
