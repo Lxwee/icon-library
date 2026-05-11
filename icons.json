@@ -884,13 +884,6 @@
       "style": "color"
     },
     {
-      "id": "level-iv-warning-color",
-      "baseId": "level-iv-warning",
-      "name": "IV 级预警",
-      "group": "statisticscardicon",
-      "style": "color"
-    },
-    {
       "id": "significant-risk-color",
       "baseId": "significant-risk",
       "name": "重大风险",
