@@ -30,6 +30,10 @@
     "statisticscardicon": {
       "label": "统计卡片图标",
       "color": "#6366f1"
+    },
+    "ranking": {
+      "label": "排名",
+      "color": "#6366f1"
     }
   },
   "icons": [
@@ -1937,6 +1941,41 @@
       "baseId": "components",
       "name": "构配件",
       "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "ranking-105-color",
+      "baseId": "ranking-105",
+      "name": "排名一05",
+      "group": "ranking",
+      "style": "color"
+    },
+    {
+      "id": "ranking-104-color",
+      "baseId": "ranking-104",
+      "name": "排名一04",
+      "group": "ranking",
+      "style": "color"
+    },
+    {
+      "id": "ranking-103-color",
+      "baseId": "ranking-103",
+      "name": "排名一03",
+      "group": "ranking",
+      "style": "color"
+    },
+    {
+      "id": "ranking-102-color",
+      "baseId": "ranking-102",
+      "name": "排名一02",
+      "group": "ranking",
+      "style": "color"
+    },
+    {
+      "id": "ranking-101-color",
+      "baseId": "ranking-101",
+      "name": "排名一01",
+      "group": "ranking",
       "style": "color"
     }
   ]
