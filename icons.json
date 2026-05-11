@@ -929,8 +929,9 @@
       "id": "general-risks-color",
       "baseId": "general-risks",
       "name": "一般风险",
-      "group": "statisticscardicon",
-      "style": "color"
+      "group": "warninglevel",
+      "style": "color",
+      "tags": []
     },
     {
       "id": "less-risk-color",
