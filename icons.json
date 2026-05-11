@@ -26,6 +26,10 @@
     "devicecategory": {
       "label": "设备种类",
       "color": "#f43f5e"
+    },
+    "statisticscardicon": {
+      "label": "统计卡片图标",
+      "color": "#6366f1"
     }
   },
   "icons": [
@@ -729,6 +733,1210 @@
       "baseId": "punching-machine",
       "name": "冲孔机",
       "group": "devicecategory",
+      "style": "color"
+    },
+    {
+      "id": "monthly-meeting-color",
+      "baseId": "monthly-meeting",
+      "name": "月例会",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "weekly-meeting-color",
+      "baseId": "weekly-meeting",
+      "name": "周例会",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "first-construction-site-meeting-color",
+      "baseId": "first-construction-site-meeting",
+      "name": "第一次工地会议",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "design-briefing-meeting-color",
+      "baseId": "design-briefing-meeting",
+      "name": "设计交底会议",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "supervision-work-briefing-meeting-color",
+      "baseId": "supervision-work-briefing-meeting",
+      "name": "监理工作交底会议",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "supervise-internal-meetings-color",
+      "baseId": "supervise-internal-meetings",
+      "name": "监理内部会议",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "security-topic-meeting-color",
+      "baseId": "security-topic-meeting",
+      "name": "安全专题会议",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "other-special-conferences-color",
+      "baseId": "other-special-conferences",
+      "name": "其他专题会议",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "meeting-color",
+      "baseId": "meeting",
+      "name": "会议",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "other-meetings-color",
+      "baseId": "other-meetings",
+      "name": "其他会议",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "issue-pending-color",
+      "baseId": "issue-pending",
+      "name": "问题待处理",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "problem-in-progress-color",
+      "baseId": "problem-in-progress",
+      "name": "问题处理中",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "problem-solved-color",
+      "baseId": "problem-solved",
+      "name": "问题已处理",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "project-department-rectification-color",
+      "baseId": "project-department-rectification",
+      "name": "项目部整改",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "issue-notice-color",
+      "baseId": "issue-notice",
+      "name": "下发通知单",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "construction-contract-amount-color",
+      "baseId": "construction-contract-amount",
+      "name": "施工合同额",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "total-list-price-color",
+      "baseId": "total-list-price",
+      "name": "清单合价合计",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "total-amount-submitted-for-review-color",
+      "baseId": "total-amount-submitted-for-review",
+      "name": "报审金额合计",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "total-supervision-and-audit-amount-color",
+      "baseId": "total-supervision-and-audit-amount",
+      "name": "监理审核金额合计",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "the-total-amount-reviewed-by-the-owner-color",
+      "baseId": "the-total-amount-reviewed-by-the-owner",
+      "name": "业主审核金额合计",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "level-i-warning-color",
+      "baseId": "level-i-warning",
+      "name": "I 级预警",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "level-ii-warning-color",
+      "baseId": "level-ii-warning",
+      "name": "II 级预警",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "level-iii-warning-color",
+      "baseId": "level-iii-warning",
+      "name": "III 级预警",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "level-iv-warning-color",
+      "baseId": "level-iv-warning",
+      "name": "IV 级预警",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "significant-risk-color",
+      "baseId": "significant-risk",
+      "name": "重大风险",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "greater-risk-color",
+      "baseId": "greater-risk",
+      "name": "较大风险",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "general-risks-color",
+      "baseId": "general-risks",
+      "name": "一般风险",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "less-risk-color",
+      "baseId": "less-risk",
+      "name": "较小风险",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "important-sources-of-danger-color",
+      "baseId": "important-sources-of-danger",
+      "name": "重要危险源",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "all-environmental-factors-color",
+      "baseId": "all-environmental-factors",
+      "name": "环境因素全部",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "judgment-of-right-and-wrong-color",
+      "baseId": "judgment-of-right-and-wrong",
+      "name": "是非判断",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "consumable-category-color",
+      "baseId": "consumable-category",
+      "name": "消耗类",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "emissions-color",
+      "baseId": "emissions",
+      "name": "排放类",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "total-number-of-devices-color",
+      "baseId": "total-number-of-devices",
+      "name": "设备总数",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "on-site-equipment-color",
+      "baseId": "on-site-equipment",
+      "name": "在场设备",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "exit-equipment-color",
+      "baseId": "exit-equipment",
+      "name": "退场设备",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "new-equipment-this-month-color",
+      "baseId": "new-equipment-this-month",
+      "name": "本月新增设备",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "all-people-color",
+      "baseId": "all-people",
+      "name": "全部人员",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "personnel-on-duty-color",
+      "baseId": "personnel-on-duty",
+      "name": "在岗人员",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "exit-personnel-color",
+      "baseId": "exit-personnel",
+      "name": "退场人员",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "full-time-safety-production-management-personnel-color",
+      "baseId": "full-time-safety-production-management-personnel",
+      "name": "专职安全生产管理人员",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "project-leader-color",
+      "baseId": "project-leader",
+      "name": "项目负责人",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "main-person-in-charge-of-the-company-color",
+      "baseId": "main-person-in-charge-of-the-company",
+      "name": "企业主要负责人",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "battery-information-color",
+      "baseId": "battery-information",
+      "name": "电池信息",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "data-color",
+      "baseId": "data",
+      "name": "数据",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "projection-control-color",
+      "baseId": "projection-control",
+      "name": "投射控制",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "cloud-platform-color",
+      "baseId": "cloud-platform",
+      "name": "云平台",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "drone-color",
+      "baseId": "drone",
+      "name": "无人机",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "cumulative-land-acquisition-area-color",
+      "baseId": "cumulative-land-acquisition-area",
+      "name": "累计征地面积",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "total-house-area-color",
+      "baseId": "total-house-area",
+      "name": "房屋总面积",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "land-has-been-handed-over-color",
+      "baseId": "land-has-been-handed-over",
+      "name": "已交地",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "not-signed-color",
+      "baseId": "not-signed",
+      "name": "未签订",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "total-number-of-resettled-people-color",
+      "baseId": "total-number-of-resettled-people",
+      "name": "总安置人数",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "total-collected-area-color",
+      "baseId": "total-collected-area",
+      "name": "总征收面积",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "total-other-on-site-cost-budget-total-color",
+      "baseId": "total-other-on-site-cost-budget-total",
+      "name": "其他现场成本预算总额合计",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "total-travel-expenses-for-production-project-personnel-color",
+      "baseId": "total-travel-expenses-for-production-project-personnel",
+      "name": "生产项目人差旅费总额合计",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "total-labor-costs-for-production-projects-color",
+      "baseId": "total-labor-costs-for-production-projects",
+      "name": "生产项目劳务费总额合计",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "total-labor-costs-for-production-projects-1-color",
+      "baseId": "total-labor-costs-for-production-projects-1",
+      "name": "生产项目人工费总额合计",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "summary-of-cost-budget-amounts-color",
+      "baseId": "summary-of-cost-budget-amounts",
+      "name": "成本预算金额汇总额",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "total-collection-budget-color",
+      "baseId": "total-collection-budget",
+      "name": "收款预算总额合计",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "total-operating-income-budget-color",
+      "baseId": "total-operating-income-budget",
+      "name": "营业收入预算总额合计",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "onewei-color",
+      "baseId": "onewei",
+      "name": "单",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "department-color",
+      "baseId": "department",
+      "name": "部",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "itemicon-color",
+      "baseId": "itemicon",
+      "name": "项",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "comprehensive-quality-training-color",
+      "baseId": "comprehensive-quality-training",
+      "name": "综合素质培训",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "new-employee-induction-training-color",
+      "baseId": "new-employee-induction-training",
+      "name": "新员工入职培训",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "updated-this-month-color",
+      "baseId": "updated-this-month",
+      "name": "本月更新",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "new-this-month-color",
+      "baseId": "new-this-month",
+      "name": "本月新增",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "valid-drawings-color",
+      "baseId": "valid-drawings",
+      "name": "有效图纸",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "archived-color",
+      "baseId": "archived",
+      "name": "已归档",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "scrapped-color",
+      "baseId": "scrapped",
+      "name": "已报废",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "scrapping-color",
+      "baseId": "scrapping",
+      "name": "报废中",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "transferring-color",
+      "baseId": "transferring",
+      "name": "调拨中",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "in-use-color",
+      "baseId": "in-use",
+      "name": "使用中",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "idle-color",
+      "baseId": "idle",
+      "name": "空闲",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "within-7-days-color",
+      "baseId": "within-7-days",
+      "name": "7天内",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "introduction-color",
+      "baseId": "introduction",
+      "name": "简介",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "posticon-color",
+      "baseId": "posticon",
+      "name": "岗位",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "personnel-color",
+      "baseId": "personnel",
+      "name": "人员",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "technical-issues-color",
+      "baseId": "technical-issues",
+      "name": "技术课题",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "defect-liability-period-color",
+      "baseId": "defect-liability-period",
+      "name": "缺陷责任期",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "software-copyright-color",
+      "baseId": "software-copyright",
+      "name": "软件著作权",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "patent-color",
+      "baseId": "patent",
+      "name": "专利",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "operating-instructions-color",
+      "baseId": "operating-instructions",
+      "name": "操作指引",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "videoicon-color",
+      "baseId": "videoicon",
+      "name": "视频",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "safety-inspector-color",
+      "baseId": "safety-inspector",
+      "name": "安全督察",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "operational-documentation-color",
+      "baseId": "operational-documentation",
+      "name": "操作文档",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "side-station-record-color",
+      "baseId": "side-station-record",
+      "name": "旁站记录",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "parallel-testing-color",
+      "baseId": "parallel-testing",
+      "name": "平行检验",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "total-number-of-supplies-color",
+      "baseId": "total-number-of-supplies",
+      "name": "物资总数",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "project-quality-acceptance-color",
+      "baseId": "project-quality-acceptance",
+      "name": "工程质量验收",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "mix-ratio-quality-control-color",
+      "baseId": "mix-ratio-quality-control",
+      "name": "配合比质量控制",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "quality-inspection-color",
+      "baseId": "quality-inspection",
+      "name": "质量督察",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "physical-inspection-quality-control-color",
+      "baseId": "physical-inspection-quality-control",
+      "name": "实体检测质量控制",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "component-quality-control-color",
+      "baseId": "component-quality-control",
+      "name": "构配件质量控制",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "inspector-coverage-color",
+      "baseId": "inspector-coverage",
+      "name": "督察覆盖率",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "equipment-quality-control-color",
+      "baseId": "equipment-quality-control",
+      "name": "设备质量控制",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "project-in-progress-color",
+      "baseId": "project-in-progress",
+      "name": "项目进行中",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "raw-material-quality-control-color",
+      "baseId": "raw-material-quality-control",
+      "name": "原材料质量控制",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "planning-in-progress-color",
+      "baseId": "planning-in-progress",
+      "name": "计划进行中",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "submittal-submission-for-review-color",
+      "baseId": "submittal-submission-for-review",
+      "name": "分项开工报审",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "evaluation-points-color",
+      "baseId": "evaluation-points",
+      "name": "评价分",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "special-plan-submission-color",
+      "baseId": "special-plan-submission",
+      "name": "专项方案报审",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "project-completed-color",
+      "baseId": "project-completed",
+      "name": "项目已完成",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "construction-plan-review-color",
+      "baseId": "construction-plan-review",
+      "name": "施工方案审查",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "iconguocheng-color",
+      "baseId": "iconguocheng",
+      "name": "过程记录",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "project-to-be-started-color",
+      "baseId": "project-to-be-started",
+      "name": "项目待开始",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "program-items-color",
+      "baseId": "program-items",
+      "name": "程序项目",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "plan-to-start-color",
+      "baseId": "plan-to-start",
+      "name": "计划待开始",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "decoration-project-color",
+      "baseId": "decoration-project",
+      "name": "装饰工程",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "under-construction-color",
+      "baseId": "under-construction",
+      "name": "在建",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "railway-engineering-color",
+      "baseId": "railway-engineering",
+      "name": "铁路工程",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "within-30-days-color",
+      "baseId": "within-30-days",
+      "name": "30天内",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "construction-project-color",
+      "baseId": "construction-project",
+      "name": "建筑工程",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "post-1-color",
+      "baseId": "post-1",
+      "name": "岗位",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "municipal-engineering-color",
+      "baseId": "municipal-engineering",
+      "name": "市政工程",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "completed-color",
+      "baseId": "completed",
+      "name": "竣工",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "water-conservancy-project-color",
+      "baseId": "water-conservancy-project",
+      "name": "水利工程",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "more-than-a-month-color",
+      "baseId": "more-than-a-month",
+      "name": "一个月以上",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "civil-aviation-engineering-color",
+      "baseId": "civil-aviation-engineering",
+      "name": "民航工程",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "plan-completed-color",
+      "baseId": "plan-completed",
+      "name": "计划已完成",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "water-transportation-project-color",
+      "baseId": "water-transportation-project",
+      "name": "水运工程",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "within-14-days-color",
+      "baseId": "within-14-days",
+      "name": "14天内",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "highway-engineering-color",
+      "baseId": "highway-engineering",
+      "name": "公路工程",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "preparation-color",
+      "baseId": "preparation",
+      "name": "筹备",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "total-number-of-projects-color",
+      "baseId": "total-number-of-projects",
+      "name": "项目总数",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "gravel-color",
+      "baseId": "gravel",
+      "name": "碎石",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "number-of-passing-inspection-points-color",
+      "baseId": "number-of-passing-inspection-points",
+      "name": "平检合格点数",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "admixture-color",
+      "baseId": "admixture",
+      "name": "掺和剂",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "total-points-of-flat-inspection-color",
+      "baseId": "total-points-of-flat-inspection",
+      "name": "平检总点数",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "launch-highlights-color",
+      "baseId": "launch-highlights",
+      "name": "发起亮点",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "total-checkpoints-color",
+      "baseId": "total-checkpoints",
+      "name": "总检验点数",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "cement-color",
+      "baseId": "cement",
+      "name": "水泥",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "the-supervision-notice-has-been-rectified-color",
+      "baseId": "the-supervision-notice-has-been-rectified",
+      "name": "监理通知已整改",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "equipment-color",
+      "baseId": "equipment",
+      "name": "设备",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "test-and-testing-materials-color",
+      "baseId": "test-and-testing-materials",
+      "name": "试验检测材料",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "physical-test-color",
+      "baseId": "physical-test",
+      "name": "实体试验",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "mix-ratio-test-color",
+      "baseId": "mix-ratio-test",
+      "name": "配合比试验",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "material-testing-color",
+      "baseId": "material-testing",
+      "name": "材料试验",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "all-materials-color",
+      "baseId": "all-materials",
+      "name": "全部材料",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "process-void-color",
+      "baseId": "process-void",
+      "name": "流程作废",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "process-rejection-color",
+      "baseId": "process-rejection",
+      "name": "流程拒绝",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "additive-color",
+      "baseId": "additive",
+      "name": "添加剂",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "process-under-review-color",
+      "baseId": "process-under-review",
+      "name": "流程审核中",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "process-initiation-color",
+      "baseId": "process-initiation",
+      "name": "流程发起",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "total-number-of-sub-projects-color",
+      "baseId": "total-number-of-sub-projects",
+      "name": "分项工程总数",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "process-completed-color",
+      "baseId": "process-completed",
+      "name": "流程完成",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "number-of-inspections-color",
+      "baseId": "number-of-inspections",
+      "name": "巡视次数",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "all-appliances-color",
+      "baseId": "all-appliances",
+      "name": "全部器具",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "equipment-present-color",
+      "baseId": "equipment-present",
+      "name": "在场器具",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "number-of-parts-inspected-color",
+      "baseId": "number-of-parts-inspected",
+      "name": "已检验部位数",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "material-color",
+      "baseId": "material",
+      "name": "材料",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "average-pass-rate-of-general-inspection-color",
+      "baseId": "average-pass-rate-of-general-inspection",
+      "name": "平检平均合格率",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "average-pass-rate-color",
+      "baseId": "average-pass-rate",
+      "name": "平均合格率",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "number-of-batches-inspected-color",
+      "baseId": "number-of-batches-inspected",
+      "name": "已检验批数",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "all-supervision-notices-color",
+      "baseId": "all-supervision-notices",
+      "name": "监理通知全部",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "inspection-parts-color",
+      "baseId": "inspection-parts",
+      "name": "巡视部位",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "engineering-entity-color",
+      "baseId": "engineering-entity",
+      "name": "工程实体",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "exit-equipment-1-color",
+      "baseId": "exit-equipment-1",
+      "name": "退场器具",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "other-materials-color",
+      "baseId": "other-materials",
+      "name": "其他材料",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "sand-color",
+      "baseId": "sand",
+      "name": "砂",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "total-qualifying-points-color",
+      "baseId": "total-qualifying-points",
+      "name": "总合格点数",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "icon-1-color",
+      "baseId": "icon-1",
+      "name": "流程总数",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "supervision-notice-is-being-rectified-color",
+      "baseId": "supervision-notice-is-being-rectified",
+      "name": "监理通知整改中",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "all-processes-color",
+      "baseId": "all-processes",
+      "name": "全部流程",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "ask-a-question-color",
+      "baseId": "ask-a-question",
+      "name": "发起问题",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "supervision-notice-to-be-rectified-color",
+      "baseId": "supervision-notice-to-be-rectified",
+      "name": "监理通知待整改",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "mix-ratio-color",
+      "baseId": "mix-ratio",
+      "name": "配合比",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "rebar-color",
+      "baseId": "rebar",
+      "name": "钢筋",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "process-returns-color",
+      "baseId": "process-returns",
+      "name": "流程返回",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "all-color",
+      "baseId": "all",
+      "name": "全部",
+      "group": "statisticscardicon",
+      "style": "color"
+    },
+    {
+      "id": "components-color",
+      "baseId": "components",
+      "name": "构配件",
+      "group": "statisticscardicon",
       "style": "color"
     }
   ]
