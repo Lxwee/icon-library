@@ -34,6 +34,10 @@
     "ranking": {
       "label": "排名",
       "color": "#6366f1"
+    },
+    "smartconstructionsite": {
+      "label": "智慧工地",
+      "color": "#6366f1"
     }
   },
   "icons": [
@@ -2054,6 +2058,202 @@
       "name": "排名四01",
       "group": "ranking",
       "style": "color"
+    },
+    {
+      "id": "smart-construction-site-outlined",
+      "baseId": "smart-construction-site",
+      "name": "智慧工地",
+      "group": "smartconstructionsite",
+      "style": "outlined"
+    },
+    {
+      "id": "knowledge-base-outlined",
+      "baseId": "knowledge-base",
+      "name": "知识库",
+      "group": "smartconstructionsite",
+      "style": "outlined"
+    },
+    {
+      "id": "material-module-outlined",
+      "baseId": "material-module",
+      "name": "物资模块",
+      "group": "smartconstructionsite",
+      "style": "outlined"
+    },
+    {
+      "id": "digital-data-outlined",
+      "baseId": "digital-data",
+      "name": "数字资料",
+      "group": "smartconstructionsite",
+      "style": "outlined"
+    },
+    {
+      "id": "equipment-outlined",
+      "baseId": "equipment",
+      "name": "设备",
+      "group": "smartconstructionsite",
+      "style": "outlined"
+    },
+    {
+      "id": "panorama-module-outlined",
+      "baseId": "panorama-module",
+      "name": "全景模块",
+      "group": "smartconstructionsite",
+      "style": "outlined"
+    },
+    {
+      "id": "progress-module-outlined",
+      "baseId": "progress-module",
+      "name": "进度模块",
+      "group": "smartconstructionsite",
+      "style": "outlined"
+    },
+    {
+      "id": "technical-management-outlined",
+      "baseId": "technical-management",
+      "name": "技术管理",
+      "group": "smartconstructionsite",
+      "style": "outlined"
+    },
+    {
+      "id": "instant-messaging-outlined",
+      "baseId": "instant-messaging",
+      "name": "即时通讯",
+      "group": "smartconstructionsite",
+      "style": "outlined"
+    },
+    {
+      "id": "conference-module-outlined",
+      "baseId": "conference-module",
+      "name": "会议模块",
+      "group": "smartconstructionsite",
+      "style": "outlined"
+    },
+    {
+      "id": "common-modules-outlined",
+      "baseId": "common-modules",
+      "name": "常用模块",
+      "group": "smartconstructionsite",
+      "style": "outlined"
+    },
+    {
+      "id": "security-module-outlined",
+      "baseId": "security-module",
+      "name": "安全模块",
+      "group": "smartconstructionsite",
+      "style": "outlined"
+    },
+    {
+      "id": "lift-outlined",
+      "baseId": "lift",
+      "name": "升降机",
+      "group": "smartconstructionsite",
+      "style": "outlined"
+    },
+    {
+      "id": "flying-dust-outlined",
+      "baseId": "flying-dust",
+      "name": "扬尘",
+      "group": "smartconstructionsite",
+      "style": "outlined"
+    },
+    {
+      "id": "cloud-pricing-outlined",
+      "baseId": "cloud-pricing",
+      "name": "云计价",
+      "group": "smartconstructionsite",
+      "style": "outlined"
+    },
+    {
+      "id": "quality-module-outlined",
+      "baseId": "quality-module",
+      "name": "质量模块",
+      "group": "smartconstructionsite",
+      "style": "outlined"
+    },
+    {
+      "id": "unloading-outlined",
+      "baseId": "unloading",
+      "name": "卸料",
+      "group": "smartconstructionsite",
+      "style": "outlined"
+    },
+    {
+      "id": "tower-crane-outlined",
+      "baseId": "tower-crane",
+      "name": "塔吊",
+      "group": "smartconstructionsite",
+      "style": "outlined"
+    },
+    {
+      "id": "ai-recognition-outlined",
+      "baseId": "ai-recognition",
+      "name": "AI识别",
+      "group": "smartconstructionsite",
+      "style": "outlined"
+    },
+    {
+      "id": "monitor-outlined",
+      "baseId": "monitor",
+      "name": "监控",
+      "group": "smartconstructionsite",
+      "style": "outlined"
+    },
+    {
+      "id": "remote-inspection-outlined",
+      "baseId": "remote-inspection",
+      "name": "远程巡检",
+      "group": "smartconstructionsite",
+      "style": "outlined"
+    },
+    {
+      "id": "high-support-mold-outlined",
+      "baseId": "high-support-mold",
+      "name": "高支模",
+      "group": "smartconstructionsite",
+      "style": "outlined"
+    },
+    {
+      "id": "personnel-positioning-outlined",
+      "baseId": "personnel-positioning",
+      "name": "人员定位",
+      "group": "smartconstructionsite",
+      "style": "outlined"
+    },
+    {
+      "id": "labor-real-name-system-outlined",
+      "baseId": "labor-real-name-system",
+      "name": "劳务实名制",
+      "group": "smartconstructionsite",
+      "style": "outlined"
+    },
+    {
+      "id": "foundation-pit-outlined",
+      "baseId": "foundation-pit",
+      "name": "基坑",
+      "group": "smartconstructionsite",
+      "style": "outlined"
+    },
+    {
+      "id": "fire-smoke-alarm-outlined",
+      "baseId": "fire-smoke-alarm",
+      "name": "火灾烟雾报警",
+      "group": "smartconstructionsite",
+      "style": "outlined"
+    },
+    {
+      "id": "alarm-settings-outlined",
+      "baseId": "alarm-settings",
+      "name": "报警设置",
+      "group": "smartconstructionsite",
+      "style": "outlined"
+    },
+    {
+      "id": "time-lapse-photography-outlined",
+      "baseId": "time-lapse-photography",
+      "name": "延时摄影",
+      "group": "smartconstructionsite",
+      "style": "outlined"
     }
   ]
 }
