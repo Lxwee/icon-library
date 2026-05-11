@@ -915,8 +915,9 @@
       "id": "significant-risk-color",
       "baseId": "significant-risk",
       "name": "重大风险",
-      "group": "statisticscardicon",
-      "style": "color"
+      "group": "warninglevel",
+      "style": "color",
+      "tags": []
     },
     {
       "id": "greater-risk-color",
