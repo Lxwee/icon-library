@@ -22,6 +22,10 @@
     "weather": {
       "label": "天气",
       "color": "#8b5cf6"
+    },
+    "devicecategory": {
+      "label": "设备种类",
+      "color": "#f43f5e"
     }
   },
   "icons": [
@@ -488,6 +492,244 @@
       "name": "Txt",
       "group": "filetype",
       "style": "filled"
+    },
+    {
+      "id": "impact-drill-color",
+      "baseId": "impact-drill",
+      "name": "冲击钻",
+      "group": "devicecategory",
+      "style": "color"
+    },
+    {
+      "id": "rotary-drill-color",
+      "baseId": "rotary-drill",
+      "name": "旋挖钻",
+      "group": "devicecategory",
+      "style": "color"
+    },
+    {
+      "id": "crawler-crane-color",
+      "baseId": "crawler-crane",
+      "name": "履带吊",
+      "group": "devicecategory",
+      "style": "color"
+    },
+    {
+      "id": "car-crane-color",
+      "baseId": "car-crane",
+      "name": "汽车吊",
+      "group": "devicecategory",
+      "style": "color"
+    },
+    {
+      "id": "truck-mounted-crane-color",
+      "baseId": "truck-mounted-crane",
+      "name": "随车吊",
+      "group": "devicecategory",
+      "style": "color"
+    },
+    {
+      "id": "concrete-tank-truck-color",
+      "baseId": "concrete-tank-truck",
+      "name": "砼罐车",
+      "group": "devicecategory",
+      "style": "color"
+    },
+    {
+      "id": "excavator-color",
+      "baseId": "excavator",
+      "name": "挖掘机",
+      "group": "devicecategory",
+      "style": "color"
+    },
+    {
+      "id": "roller-color",
+      "baseId": "roller",
+      "name": "压路机",
+      "group": "devicecategory",
+      "style": "color"
+    },
+    {
+      "id": "bulldozer-color",
+      "baseId": "bulldozer",
+      "name": "推土机",
+      "group": "devicecategory",
+      "style": "color"
+    },
+    {
+      "id": "grader-color",
+      "baseId": "grader",
+      "name": "平地机",
+      "group": "devicecategory",
+      "style": "color"
+    },
+    {
+      "id": "loader-color",
+      "baseId": "loader",
+      "name": "装载机",
+      "group": "devicecategory",
+      "style": "color"
+    },
+    {
+      "id": "excavator-1-color",
+      "baseId": "excavator-1",
+      "name": "渣土机",
+      "group": "devicecategory",
+      "style": "color"
+    },
+    {
+      "id": "flatbed-truck-color",
+      "baseId": "flatbed-truck",
+      "name": "平板车",
+      "group": "devicecategory",
+      "style": "color"
+    },
+    {
+      "id": "sprinkler-color",
+      "baseId": "sprinkler",
+      "name": "洒水车",
+      "group": "devicecategory",
+      "style": "color"
+    },
+    {
+      "id": "wet-spray-machine-color",
+      "baseId": "wet-spray-machine",
+      "name": "湿喷机",
+      "group": "devicecategory",
+      "style": "color"
+    },
+    {
+      "id": "rock-drill-color",
+      "baseId": "rock-drill",
+      "name": "凿岩机",
+      "group": "devicecategory",
+      "style": "color"
+    },
+    {
+      "id": "aerial-vehicle-color",
+      "baseId": "aerial-vehicle",
+      "name": "登高车",
+      "group": "devicecategory",
+      "style": "color"
+    },
+    {
+      "id": "dynamo-color",
+      "baseId": "dynamo",
+      "name": "发电机",
+      "group": "devicecategory",
+      "style": "color"
+    },
+    {
+      "id": "air-compressor-color",
+      "baseId": "air-compressor",
+      "name": "空压机",
+      "group": "devicecategory",
+      "style": "color"
+    },
+    {
+      "id": "down-the-hole-drill-color",
+      "baseId": "down-the-hole-drill",
+      "name": "潜孔钻",
+      "group": "devicecategory",
+      "style": "color"
+    },
+    {
+      "id": "grouting-machine-color",
+      "baseId": "grouting-machine",
+      "name": "注浆机",
+      "group": "devicecategory",
+      "style": "color"
+    },
+    {
+      "id": "truss-crane-color",
+      "baseId": "truss-crane",
+      "name": "桁吊",
+      "group": "devicecategory",
+      "style": "color"
+    },
+    {
+      "id": "seam-welding-machine-color",
+      "baseId": "seam-welding-machine",
+      "name": "滚焊机",
+      "group": "devicecategory",
+      "style": "color"
+    },
+    {
+      "id": "steel-bar-sawing-machine-color",
+      "baseId": "steel-bar-sawing-machine",
+      "name": "钢筋锯床",
+      "group": "devicecategory",
+      "style": "color"
+    },
+    {
+      "id": "thread-rolling-machine-color",
+      "baseId": "thread-rolling-machine",
+      "name": "滚丝机",
+      "group": "devicecategory",
+      "style": "color"
+    },
+    {
+      "id": "bending-machine-color",
+      "baseId": "bending-machine",
+      "name": "弯曲机",
+      "group": "devicecategory",
+      "style": "color"
+    },
+    {
+      "id": "cutting-machine-color",
+      "baseId": "cutting-machine",
+      "name": "切断机",
+      "group": "devicecategory",
+      "style": "color"
+    },
+    {
+      "id": "straightening-machine-color",
+      "baseId": "straightening-machine",
+      "name": "调直机",
+      "group": "devicecategory",
+      "style": "color"
+    },
+    {
+      "id": "welding-machine-color",
+      "baseId": "welding-machine",
+      "name": "电焊机",
+      "group": "devicecategory",
+      "style": "color"
+    },
+    {
+      "id": "sharpening-machine-color",
+      "baseId": "sharpening-machine",
+      "name": "缩尖机",
+      "group": "devicecategory",
+      "style": "color"
+    },
+    {
+      "id": "mesh-machine-color",
+      "baseId": "mesh-machine",
+      "name": "网片机",
+      "group": "devicecategory",
+      "style": "color"
+    },
+    {
+      "id": "cold-bending-machine-color",
+      "baseId": "cold-bending-machine",
+      "name": "冷弯机",
+      "group": "devicecategory",
+      "style": "color"
+    },
+    {
+      "id": "cutting-machine-1-color",
+      "baseId": "cutting-machine-1",
+      "name": "切割机",
+      "group": "devicecategory",
+      "style": "color"
+    },
+    {
+      "id": "punching-machine-color",
+      "baseId": "punching-machine",
+      "name": "冲孔机",
+      "group": "devicecategory",
+      "style": "color"
     }
   ]
 }
