@@ -2033,6 +2033,27 @@
       "name": "排名三01",
       "group": "ranking",
       "style": "color"
+    },
+    {
+      "id": "ranking-four-03-color",
+      "baseId": "ranking-four-03",
+      "name": "排名四03",
+      "group": "ranking",
+      "style": "color"
+    },
+    {
+      "id": "ranking-402-color",
+      "baseId": "ranking-402",
+      "name": "排名四02",
+      "group": "ranking",
+      "style": "color"
+    },
+    {
+      "id": "ranking-401-color",
+      "baseId": "ranking-401",
+      "name": "排名四01",
+      "group": "ranking",
+      "style": "color"
     }
   ]
 }
