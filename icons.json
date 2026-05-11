@@ -1983,41 +1983,6 @@
       "style": "color"
     },
     {
-      "id": "ranking-205-outlined",
-      "baseId": "ranking-205",
-      "name": "排名二05",
-      "group": "organization",
-      "style": "outlined"
-    },
-    {
-      "id": "ranking-204-outlined",
-      "baseId": "ranking-204",
-      "name": "排名二04",
-      "group": "organization",
-      "style": "outlined"
-    },
-    {
-      "id": "ranking-203-outlined",
-      "baseId": "ranking-203",
-      "name": "排名二03",
-      "group": "organization",
-      "style": "outlined"
-    },
-    {
-      "id": "ranking-202-outlined",
-      "baseId": "ranking-202",
-      "name": "排名二02",
-      "group": "organization",
-      "style": "outlined"
-    },
-    {
-      "id": "ranking-201-outlined",
-      "baseId": "ranking-201",
-      "name": "排名二01",
-      "group": "organization",
-      "style": "outlined"
-    },
-    {
       "id": "ranking-three-03-color",
       "baseId": "ranking-three-03",
       "name": "排名三03",
