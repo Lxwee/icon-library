@@ -884,13 +884,6 @@
       "style": "color"
     },
     {
-      "id": "level-ii-warning-color",
-      "baseId": "level-ii-warning",
-      "name": "II 级预警",
-      "group": "statisticscardicon",
-      "style": "color"
-    },
-    {
       "id": "level-iii-warning-color",
       "baseId": "level-iii-warning",
       "name": "III 级预警",
