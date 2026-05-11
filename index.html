@@ -8,28 +8,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-body: #0b0b11;
-            --bg-surface: #13131d;
-            --bg-card: #1a1a28;
-            --bg-card-hover: #222234;
-            --bg-input: #1e1e2e;
-            --text-1: #eeeef4;
-            --text-2: #a0a0b8;
-            --text-3: #63637a;
-            --border: #2a2a3e;
-            --accent: #6366f1;
-            --accent-hover: #818cf8;
-            --success: #10b981;
-            --warning: #f59e0b;
-            --danger: #ef4444;
-            --radius: 12px;
-            --shadow: 0 4px 24px rgba(0,0,0,0.3);
-            --header-bg: linear-gradient(135deg, #13131d 0%, #1a1a30 50%, #151530 100%);
-            --modal-shadow: 0 24px 64px rgba(0,0,0,0.5);
-            --icon-default-color: #eeeef4;
-        }
-
-        [data-theme="light"] {
             --bg-body: #eff1f7;
             --bg-surface: #ffffff;
             --bg-card: #ffffff;
@@ -44,10 +22,32 @@
             --success: #10b981;
             --warning: #f59e0b;
             --danger: #ef4444;
+            --radius: 12px;
             --shadow: 0 4px 24px rgba(0,0,0,0.03);
             --header-bg: #ffffff;
             --modal-shadow: 0 24px 64px rgba(0,0,0,0.12);
             --icon-default-color: #1a1a2e;
+        }
+
+        [data-theme="dark"] {
+            --bg-body: #0b0b11;
+            --bg-surface: #13131d;
+            --bg-card: #1a1a28;
+            --bg-card-hover: #222234;
+            --bg-input: #1e1e2e;
+            --text-1: #eeeef4;
+            --text-2: #a0a0b8;
+            --text-3: #63637a;
+            --border: #2a2a3e;
+            --accent: #6366f1;
+            --accent-hover: #818cf8;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --shadow: 0 4px 24px rgba(0,0,0,0.3);
+            --header-bg: linear-gradient(135deg, #13131d 0%, #1a1a30 50%, #151530 100%);
+            --modal-shadow: 0 24px 64px rgba(0,0,0,0.5);
+            --icon-default-color: #eeeef4;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -160,8 +160,8 @@
             background: rgba(0,0,0,0.1);
             border-radius: 10px;
         }
-        [data-theme="light"] .nav-item .badge { background: rgba(0,0,0,0.06); color: var(--text-2); }
-        [data-theme="light"] .nav-item.active .badge { background: rgba(255,255,255,0.3); color: #fff; }
+        [data-theme="dark"] .nav-item .badge { background: rgba(255,255,255,0.1); color: var(--text-2); }
+        [data-theme="dark"] .nav-item.active .badge { background: rgba(0,0,0,0.3); color: #fff; }
 
         .dev-docs-btn {
             display: flex;
@@ -315,7 +315,6 @@
 
         .icon-card {
             background: var(--bg-card);
-            border: 1px solid var(--border);
             border-radius: var(--radius);
             padding: 16px 8px 10px;
             text-align: center;
@@ -326,25 +325,25 @@
             flex-direction: column;
             align-items: center;
             gap: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.015);
         }
         
-        [data-theme="light"] .icon-card {
-            border: none;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.015);
+        [data-theme="dark"] .icon-card {
+            border: 1px solid var(--border);
+            box-shadow: none;
         }
 
         .icon-card:hover {
-            border-color: var(--accent);
-            background: var(--bg-card-hover);
+            background: var(--bg-surface);
+            box-shadow: 0 0 0 1px var(--accent), 0 8px 24px rgba(0,0,0,0.04);
             transform: translateY(-2px);
-            box-shadow: var(--shadow);
             z-index: 20;
         }
 
-        [data-theme="light"] .icon-card:hover {
-            background: var(--bg-surface);
-            box-shadow: 0 0 0 1px var(--accent), 0 8px 24px rgba(0,0,0,0.04);
-            z-index: 20;
+        [data-theme="dark"] .icon-card:hover {
+            border-color: var(--accent);
+            background: var(--bg-card-hover);
+            box-shadow: var(--shadow);
         }
 
         .icon-card .icon-preview {
@@ -1008,7 +1007,11 @@ let currentActiveTag = 'all';
 let currentSearch = '';
 let currentFormat = 'svg';
 let currentIconId = null;
-let currentTheme = localStorage.getItem('icon-lib-theme') || 'dark';
+let currentTheme = (() => {
+    const saved = localStorage.getItem('icon-lib-theme');
+    if (saved) return saved;
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+})();
 
 // ===== Smart Color Palette State & Logic =====
 let currentEditedSvgString = null;
@@ -1199,14 +1202,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // ===== Theme =====
 function initTheme() {
-    if (currentTheme === 'light') {
-        document.documentElement.setAttribute('data-theme', 'light');
+    if (currentTheme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+    } else {
+        document.documentElement.removeAttribute('data-theme');
     }
     updateThemeUI();
     document.addEventListener('DOMContentLoaded', () => {
         const colorPicker = document.getElementById('previewColor');
         if (colorPicker) {
             colorPicker.value = currentTheme === 'light' ? colorPicker.dataset.light : colorPicker.dataset.dark;
+        }
+    });
+
+    // Listen for system theme changes
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+        if (!localStorage.getItem('icon-lib-theme')) {
+            applyTheme(e.matches ? 'dark' : 'light');
         }
     });
 }
@@ -1239,8 +1251,8 @@ function toggleTheme() {
 
 function applyTheme(theme) {
     currentTheme = theme;
-    if (theme === 'light') {
-        document.documentElement.setAttribute('data-theme', 'light');
+    if (theme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
     } else {
         document.documentElement.removeAttribute('data-theme');
     }
