@@ -936,8 +936,9 @@
       "id": "less-risk-color",
       "baseId": "less-risk",
       "name": "较小风险",
-      "group": "statisticscardicon",
-      "style": "color"
+      "group": "warninglevel",
+      "style": "color",
+      "tags": []
     },
     {
       "id": "important-sources-of-danger-color",
