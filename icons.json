@@ -2012,6 +2012,27 @@
       "name": "排名二01",
       "group": "organization",
       "style": "outlined"
+    },
+    {
+      "id": "ranking-three-03-color",
+      "baseId": "ranking-three-03",
+      "name": "排名三03",
+      "group": "ranking",
+      "style": "color"
+    },
+    {
+      "id": "ranking-three-02-color",
+      "baseId": "ranking-three-02",
+      "name": "排名三02",
+      "group": "ranking",
+      "style": "color"
+    },
+    {
+      "id": "ranking-three-01-color",
+      "baseId": "ranking-three-01",
+      "name": "排名三01",
+      "group": "ranking",
+      "style": "color"
     }
   ]
 }
