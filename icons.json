@@ -2355,6 +2355,41 @@
       "name": "知识库",
       "group": "appicon",
       "style": "filled"
+    },
+    {
+      "id": "topic-search-filled",
+      "baseId": "topic-search",
+      "name": "专题搜索",
+      "group": "appicon",
+      "style": "filled"
+    },
+    {
+      "id": "on-site-monitoring-filled",
+      "baseId": "on-site-monitoring",
+      "name": "现场监控",
+      "group": "appicon",
+      "style": "filled"
+    },
+    {
+      "id": "global-search-filled",
+      "baseId": "global-search",
+      "name": "全局搜索",
+      "group": "appicon",
+      "style": "filled"
+    },
+    {
+      "id": "wuziguanli-filled",
+      "baseId": "wuziguanli",
+      "name": "物资管理",
+      "group": "appicon",
+      "style": "filled"
+    },
+    {
+      "id": "production-value-collection-plan-filled",
+      "baseId": "production-value-collection-plan",
+      "name": "产值收款计划",
+      "group": "appicon",
+      "style": "filled"
     }
   ]
 }
