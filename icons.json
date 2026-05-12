@@ -1926,79 +1926,90 @@
     {
       "id": "ranking-105-color",
       "baseId": "ranking-105",
-      "name": "排名一05",
+      "name": "01 - 排名五",
       "group": "ranking",
-      "style": "color"
+      "style": "color",
+      "tags": []
     },
     {
       "id": "ranking-104-color",
       "baseId": "ranking-104",
-      "name": "排名一04",
+      "name": "01 - 排名四",
       "group": "ranking",
-      "style": "color"
+      "style": "color",
+      "tags": []
     },
     {
       "id": "ranking-103-color",
       "baseId": "ranking-103",
-      "name": "排名一03",
+      "name": "01 - 排名三",
       "group": "ranking",
-      "style": "color"
+      "style": "color",
+      "tags": []
     },
     {
       "id": "ranking-102-color",
       "baseId": "ranking-102",
-      "name": "排名一02",
+      "name": "01 - 排名二",
       "group": "ranking",
-      "style": "color"
+      "style": "color",
+      "tags": []
     },
     {
       "id": "ranking-101-color",
       "baseId": "ranking-101",
-      "name": "排名一01",
+      "name": "01 - 排名一",
       "group": "ranking",
-      "style": "color"
+      "style": "color",
+      "tags": []
     },
     {
       "id": "ranking-three-03-color",
       "baseId": "ranking-three-03",
-      "name": "排名三03",
+      "name": "03 - 排名三",
       "group": "ranking",
-      "style": "color"
+      "style": "color",
+      "tags": []
     },
     {
       "id": "ranking-three-02-color",
       "baseId": "ranking-three-02",
-      "name": "排名三02",
+      "name": "03 - 排名二",
       "group": "ranking",
-      "style": "color"
+      "style": "color",
+      "tags": []
     },
     {
       "id": "ranking-three-01-color",
       "baseId": "ranking-three-01",
-      "name": "排名三01",
+      "name": "03 - 排名一",
       "group": "ranking",
-      "style": "color"
+      "style": "color",
+      "tags": []
     },
     {
       "id": "ranking-four-03-color",
       "baseId": "ranking-four-03",
-      "name": "排名四03",
+      "name": "04 - 排名三",
       "group": "ranking",
-      "style": "color"
+      "style": "color",
+      "tags": []
     },
     {
       "id": "ranking-402-color",
       "baseId": "ranking-402",
-      "name": "排名四02",
+      "name": "04 - 排名二",
       "group": "ranking",
-      "style": "color"
+      "style": "color",
+      "tags": []
     },
     {
       "id": "ranking-401-color",
       "baseId": "ranking-401",
-      "name": "排名四01",
+      "name": "04 - 排名一",
       "group": "ranking",
-      "style": "color"
+      "style": "color",
+      "tags": []
     },
     {
       "id": "smart-construction-site-outlined",
@@ -2199,37 +2210,42 @@
     {
       "id": "ranking-205-color",
       "baseId": "ranking-205",
-      "name": "排名二05",
+      "name": "02 - 排名五",
       "group": "ranking",
-      "style": "color"
+      "style": "color",
+      "tags": []
     },
     {
       "id": "ranking-204-color",
       "baseId": "ranking-204",
-      "name": "排名二04",
+      "name": "02 - 排名四",
       "group": "ranking",
-      "style": "color"
+      "style": "color",
+      "tags": []
     },
     {
       "id": "ranking-203-color",
       "baseId": "ranking-203",
-      "name": "排名二03",
+      "name": "02 - 排名三",
       "group": "ranking",
-      "style": "color"
+      "style": "color",
+      "tags": []
     },
     {
       "id": "ranking-202-color",
       "baseId": "ranking-202",
-      "name": "排名二02",
+      "name": "02 - 排名二",
       "group": "ranking",
-      "style": "color"
+      "style": "color",
+      "tags": []
     },
     {
       "id": "ranking-201-color",
       "baseId": "ranking-201",
-      "name": "排名二01",
+      "name": "02 - 排名一",
       "group": "ranking",
-      "style": "color"
+      "style": "color",
+      "tags": []
     }
   ]
 }
