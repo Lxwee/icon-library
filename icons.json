@@ -2306,6 +2306,55 @@
       "name": "应用 设置 更多",
       "group": "appicon",
       "style": "filled"
+    },
+    {
+      "id": "trophy-honor-filled",
+      "baseId": "trophy-honor",
+      "name": "奖杯 荣誉",
+      "group": "appicon",
+      "style": "filled"
+    },
+    {
+      "id": "finance-amount-money-yuan-filled",
+      "baseId": "finance-amount-money-yuan",
+      "name": "财务 金额 钱",
+      "group": "appicon",
+      "style": "filled"
+    },
+    {
+      "id": "data-jifen-filled",
+      "baseId": "data-jifen",
+      "name": "数据管理 积分",
+      "group": "appicon",
+      "style": "filled"
+    },
+    {
+      "id": "video-recording-filled",
+      "baseId": "video-recording",
+      "name": "视频 录像",
+      "group": "appicon",
+      "style": "filled"
+    },
+    {
+      "id": "file-folder-filled",
+      "baseId": "file-folder",
+      "name": "文件 文件夹",
+      "group": "appicon",
+      "style": "filled"
+    },
+    {
+      "id": "address-book-filled",
+      "baseId": "address-book",
+      "name": "通讯录 团队 人员",
+      "group": "appicon",
+      "style": "filled"
+    },
+    {
+      "id": "knowledge-base-filled",
+      "baseId": "knowledge-base",
+      "name": "知识库",
+      "group": "appicon",
+      "style": "filled"
     }
   ]
 }
