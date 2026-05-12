@@ -2278,6 +2278,34 @@
       "name": "图标 工艺",
       "group": "appicon",
       "style": "filled"
+    },
+    {
+      "id": "safetyicon-filled",
+      "baseId": "safetyicon",
+      "name": "安全",
+      "group": "appicon",
+      "style": "filled"
+    },
+    {
+      "id": "position-official-documents-business-trip-filled",
+      "baseId": "position-official-documents-business-trip",
+      "name": "岗位 公文 出差",
+      "group": "appicon",
+      "style": "filled"
+    },
+    {
+      "id": "calendar-to-do-filled",
+      "baseId": "calendar-to-do",
+      "name": "日历 待办",
+      "group": "appicon",
+      "style": "filled"
+    },
+    {
+      "id": "applyicon-filled",
+      "baseId": "applyicon",
+      "name": "应用 设置 更多",
+      "group": "appicon",
+      "style": "filled"
     }
   ]
 }
