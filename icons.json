@@ -38,6 +38,10 @@
     "smartconstructionsite": {
       "label": "智慧工地",
       "color": "#6366f1"
+    },
+    "appicon": {
+      "label": "移动端应用",
+      "color": "#10b981"
     }
   },
   "icons": [
@@ -2246,6 +2250,34 @@
       "group": "ranking",
       "style": "color",
       "tags": []
+    },
+    {
+      "id": "qualityicon-filled",
+      "baseId": "qualityicon",
+      "name": "质量",
+      "group": "appicon",
+      "style": "filled"
+    },
+    {
+      "id": "picture-album-information-filled",
+      "baseId": "picture-album-information",
+      "name": "图册 资料 记录",
+      "group": "appicon",
+      "style": "filled"
+    },
+    {
+      "id": "finance-amount-money-filled",
+      "baseId": "finance-amount-money",
+      "name": "财务 金额 钱",
+      "group": "appicon",
+      "style": "filled"
+    },
+    {
+      "id": "icon-craft-filled",
+      "baseId": "icon-craft",
+      "name": "图标 工艺",
+      "group": "appicon",
+      "style": "filled"
     }
   ]
 }
