@@ -2728,6 +2728,20 @@
       "name": "团队 用户 个人 user",
       "group": "appicon",
       "style": "filled"
+    },
+    {
+      "id": "annual-cost-budget-filled",
+      "baseId": "annual-cost-budget",
+      "name": "年度成本预算",
+      "group": "appicon",
+      "style": "filled"
+    },
+    {
+      "id": "total-cost-budget-filled",
+      "baseId": "total-cost-budget",
+      "name": "总成本预算",
+      "group": "appicon",
+      "style": "filled"
     }
   ]
 }
