@@ -2390,6 +2390,27 @@
       "name": "产值收款计划",
       "group": "appicon",
       "style": "filled"
+    },
+    {
+      "id": "supervision-and-management-filled",
+      "baseId": "supervision-and-management",
+      "name": "督查管理",
+      "group": "appicon",
+      "style": "filled"
+    },
+    {
+      "id": "work-monitoring-filled",
+      "baseId": "work-monitoring",
+      "name": "工作监控",
+      "group": "appicon",
+      "style": "filled"
+    },
+    {
+      "id": "calculate-measure-filled",
+      "baseId": "calculate-measure",
+      "name": "计算 测量",
+      "group": "appicon",
+      "style": "filled"
     }
   ]
 }
