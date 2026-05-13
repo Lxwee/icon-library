@@ -1002,7 +1002,7 @@
 // ===== State =====
 let DATA = null;
 let SVG_CACHE = {};
-let currentGroup = 'all';
+let currentGroup = localStorage.getItem('icon-lib-active-group') || 'all';
 let currentActiveTag = 'all';
 let currentSearch = '';
 let currentFormat = 'svg';
@@ -1327,10 +1327,6 @@ async function init() {
     // Preload all SVGs
     await preloadSVGs();
 
-    // Render
-    renderTags();
-    render();
-
     // Events
     document.getElementById('searchInput').addEventListener('input', e => {
         currentSearch = e.target.value.trim().toLowerCase();
@@ -1356,7 +1352,6 @@ async function init() {
         if (e.key === 'Escape') closeModal();
     });
 
-    // Code tabs
     document.querySelectorAll('.code-tab').forEach(tab => {
         tab.addEventListener('click', () => {
             document.querySelectorAll('.code-tab').forEach(t => t.classList.remove('active'));
@@ -1365,6 +1360,9 @@ async function init() {
             updateCodeBlock();
         });
     });
+
+    // Restore active group state in UI
+    setGroup(currentGroup);
 }
 
 async function preloadSVGs() {
@@ -1385,6 +1383,7 @@ async function preloadSVGs() {
 
 function setGroup(group) {
     currentGroup = group;
+    localStorage.setItem('icon-lib-active-group', group);
     currentActiveTag = 'all'; // reset tag when switching group
     document.querySelectorAll('.nav-item').forEach(p => p.classList.toggle('active', p.dataset.group === group));
     renderTags();
