@@ -2686,6 +2686,34 @@
       "name": "试验检测台账",
       "group": "appicon",
       "style": "filled"
+    },
+    {
+      "id": "crisis-plan-filled",
+      "baseId": "crisis-plan",
+      "name": "危大方案",
+      "group": "appicon",
+      "style": "filled"
+    },
+    {
+      "id": "safety-inspection-filled",
+      "baseId": "safety-inspection",
+      "name": "安全巡检",
+      "group": "appicon",
+      "style": "filled"
+    },
+    {
+      "id": "accident-reporting-filled",
+      "baseId": "accident-reporting",
+      "name": "事故上报",
+      "group": "appicon",
+      "style": "filled"
+    },
+    {
+      "id": "hidden-danger-investigation-ledger-filled",
+      "baseId": "hidden-danger-investigation-ledger",
+      "name": "隐患排查台账",
+      "group": "appicon",
+      "style": "filled"
     }
   ]
 }
