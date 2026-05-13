@@ -970,6 +970,10 @@
                                 <button class="preset-btn" data-preset="#ef4444" style="background:#ef4444" title="一键替换为：警示红"></button>
                                 <button class="preset-btn" data-preset="#f59e0b" style="background:#f59e0b" title="一键替换为：活力橙"></button>
                                 <button class="preset-btn" data-preset="#8b5cf6" style="background:#8b5cf6" title="一键替换为：魅力紫"></button>
+                                <button class="preset-btn" data-preset="#0ea5e9" style="background:#0ea5e9" title="一键替换为：天空蓝"></button>
+                                <button class="preset-btn" data-preset="#ec4899" style="background:#ec4899" title="一键替换为：亮粉色"></button>
+                                <button class="preset-btn" data-preset="#14b8a6" style="background:#14b8a6" title="一键替换为：薄荷绿"></button>
+                                <button class="preset-btn" data-preset="#475569" style="background:#475569" title="一键替换为：高级灰"></button>
                             </div>
                         </div>
                         <div style="display: flex; align-items: flex-start; gap: 12px;">
@@ -1035,6 +1039,12 @@ function colorDistance(hex1, hex2) {
     const [r1,g1,b1] = hexToRgb(hex1);
     const [r2,g2,b2] = hexToRgb(hex2);
     return Math.sqrt((r1-r2)**2 + (g1-g2)**2 + (b1-b2)**2);
+}
+
+function getLuminance(hex) {
+    const [r, g, b] = hexToRgb(hex);
+    // Relative luminance formula
+    return 0.2126 * r + 0.7152 * g + 0.0722 * b;
 }
 
 function parseSvgColors(svgString) {
@@ -1161,21 +1171,28 @@ function applyPresetColor(targetHex) {
     const colors = Object.keys(colorMapping);
     if(colors.length === 0) return;
     
-    // 智能生成同色系渐变
-    colors.forEach((col, idx) => {
+    // 1. 按照原始亮度对提取到的颜色进行排序（从暗到亮）
+    const sortedOrigColors = [...colors].sort((a, b) => getLuminance(a) - getLuminance(b));
+    
+    // 2. 根据排序后的顺序，依次分配新颜色
+    // 为了保持原本的对比方向（比如上浅下深），我们将 targetHex 作为“最深色”，然后依次变亮
+    sortedOrigColors.forEach((origCol, idx) => {
         let newColor = targetHex;
         if (idx > 0) {
-            // 每多一层颜色，亮度增加以模拟高光/渐变效果
-            newColor = adjustColor(targetHex, idx * 35); 
+            // idx 越大，颜色越亮
+            newColor = adjustColor(targetHex, idx * 30); 
         }
-        colorMapping[col] = newColor;
+        colorMapping[origCol] = newColor;
     });
     
     // Update all color inputs in the UI
     const inputs = document.getElementById('extractedColors').querySelectorAll('input[type="color"]');
-    inputs.forEach((input, idx) => {
-        if(colors[idx]) {
-            input.value = colorMapping[colors[idx]];
+    // 注意：UI 上的 input 顺序是 parseSvgColors 时的顺序，不是排序后的顺序
+    // 所以我们需要通过 dataset.orig 或其他方式匹配
+    inputs.forEach(input => {
+        const orig = input.dataset.orig;
+        if(colorMapping[orig]) {
+            input.value = colorMapping[orig];
         }
     });
     
