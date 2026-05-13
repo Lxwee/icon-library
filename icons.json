@@ -87,8 +87,7 @@
       "baseId": "hierarchy-department-fill-on",
       "name": "部门",
       "group": "organization",
-      "style": "color",
-      "tags": []
+      "style": "color"
     },
     {
       "id": "hierarchy-collaboration-unit-fill-on-color",
