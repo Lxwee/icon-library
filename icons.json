@@ -2756,6 +2756,13 @@
       "name": "年度指标",
       "group": "appicon",
       "style": "filled"
+    },
+    {
+      "id": "rectification-review-filled",
+      "baseId": "rectification-review",
+      "name": "整改复查",
+      "group": "appicon",
+      "style": "filled"
     }
   ]
 }
