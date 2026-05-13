@@ -87,7 +87,8 @@
       "baseId": "hierarchy-department-fill-on",
       "name": "部门",
       "group": "organization",
-      "style": "color"
+      "style": "color",
+      "tags": []
     },
     {
       "id": "hierarchy-collaboration-unit-fill-on-color",
@@ -2763,13 +2764,6 @@
       "name": "整改复查",
       "group": "appicon",
       "style": "filled"
-    },
-    {
-      "id": "hierarchy-department-fill-on-color-outlined",
-      "baseId": "hierarchy-department-fill-on-color",
-      "name": "部门",
-      "group": "organization",
-      "style": "outlined"
     }
   ]
 }
