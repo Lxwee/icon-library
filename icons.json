@@ -2544,6 +2544,27 @@
       "name": "特种人员",
       "group": "appicon",
       "style": "outlined"
+    },
+    {
+      "id": "daily-inquiry-filled",
+      "baseId": "daily-inquiry",
+      "name": "日报查询",
+      "group": "appicon",
+      "style": "filled"
+    },
+    {
+      "id": "construction-machinery-filled",
+      "baseId": "construction-machinery",
+      "name": "施工机械",
+      "group": "appicon",
+      "style": "filled"
+    },
+    {
+      "id": "flood-warning-filled",
+      "baseId": "flood-warning",
+      "name": "防汛预警",
+      "group": "appicon",
+      "style": "filled"
     }
   ]
 }
