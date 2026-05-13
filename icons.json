@@ -2411,6 +2411,34 @@
       "name": "计算 测量",
       "group": "appicon",
       "style": "filled"
+    },
+    {
+      "id": "management-collaboration-filled",
+      "baseId": "management-collaboration",
+      "name": "管理协同",
+      "group": "appicon",
+      "style": "filled"
+    },
+    {
+      "id": "progress-management-filled",
+      "baseId": "progress-management",
+      "name": "进度管理",
+      "group": "appicon",
+      "style": "filled"
+    },
+    {
+      "id": "bim-center-filled",
+      "baseId": "bim-center",
+      "name": "BIM 中心",
+      "group": "appicon",
+      "style": "filled"
+    },
+    {
+      "id": "supervision-records-filled",
+      "baseId": "supervision-records",
+      "name": "监理记录",
+      "group": "appicon",
+      "style": "filled"
     }
   ]
 }
