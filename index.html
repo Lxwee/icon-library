@@ -374,6 +374,65 @@
             max-width: 100%;
         }
 
+        .icon-card .style-badge {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            font-size: 10px;
+            padding: 2px 6px;
+            border-radius: 4px;
+            background: var(--bg-input);
+            color: var(--text-3);
+            border: 1px solid var(--border);
+            text-transform: capitalize;
+        }
+
+        .style-variation-list {
+            display: flex;
+            gap: 12px;
+            margin-top: 16px;
+            padding: 12px;
+            background: var(--bg-input);
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+
+        .variation-item {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 0.2s;
+            position: relative;
+        }
+
+        .variation-item:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .variation-item.active {
+            border-color: var(--accent);
+            background: var(--bg-card);
+            box-shadow: 0 0 0 1px var(--accent);
+        }
+
+        .variation-item svg { width: 24px; height: 24px; }
+
+        .variation-item::after {
+            content: attr(data-style);
+            position: absolute;
+            bottom: -18px;
+            font-size: 9px;
+            color: var(--text-3);
+            text-transform: capitalize;
+        }
+
         .icon-card .card-actions {
             position: absolute;
             inset: 0;
@@ -604,6 +663,51 @@
             font-size: 13px;
             color: var(--text-1);
             line-height: 28px;
+        }
+        .style-filter {
+            display: flex;
+            background: var(--bg-input);
+            padding: 2px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            margin-right: 12px;
+        }
+        .style-tab {
+            padding: 4px 12px;
+            border: none;
+            background: transparent;
+            color: var(--text-3);
+            font-size: 12px;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: 0.2s;
+        }
+        .style-tab:hover { color: var(--text-2); }
+        .style-tab.active {
+            background: var(--bg-surface);
+            color: var(--accent);
+            box-shadow: var(--shadow);
+        }
+
+        .copy-id-btn {
+            padding: 2px 8px;
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            font-size: 11px;
+            color: var(--text-2);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            transition: 0.2s;
+            flex-shrink: 0;
+            line-height: normal;
+        }
+        .copy-id-btn:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: var(--bg-input);
         }
 
         .modal-tag {
@@ -883,8 +987,14 @@
                 <input type="text" class="search-input" placeholder="全局搜索名称、ID 等关键词..." id="searchInput">
             </div>
             <div class="view-controls">
+                <div class="style-filter" id="styleFilter">
+                    <button class="style-tab active" data-style="all">全部</button>
+                    <button class="style-tab" data-style="outlined">线性</button>
+                    <button class="style-tab" data-style="filled">面型</button>
+                    <button class="style-tab" data-style="color">彩色</button>
+                </div>
                 <div class="color-picker-wrap">
-                    <span>预览</span>
+                    <span>预览色</span>
                     <input type="color" id="previewColor" value="#eeeef4" title="修改图标预览颜色" data-dark="#eeeef4" data-light="#1a1a2e">
                 </div>
                 <button class="theme-toggle" id="themeToggle" title="切换明暗模式">🌙</button>
@@ -924,7 +1034,13 @@
                 <div class="modal-info">
                     <div class="modal-info-row">
                         <span class="modal-info-label">引用 ID</span>
-                        <span class="modal-info-value" id="modalId" style="font-family:'JetBrains Mono',monospace"></span>
+                        <div style="display: flex; align-items: center; gap: 8px; flex: 1; min-width: 0;">
+                            <span class="modal-info-value" id="modalId" style="font-family:'JetBrains Mono',monospace; background: var(--bg-input); padding: 2px 6px; border-radius: 4px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"></span>
+                            <button class="copy-id-btn" onclick="copyId()" title="复制 ID">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                                复制
+                            </button>
+                        </div>
                     </div>
                     <div class="modal-info-row">
                         <span class="modal-info-label">名称</span>
@@ -951,6 +1067,7 @@
                     <button class="copy-btn" id="codeCopyBtn" onclick="copyCode()">复制</button>
                     <code id="codeContent"></code>
                 </div>
+                <div class="style-variation-list" id="modalVariations" style="display:none;"></div>
             </div>
 
             <!-- 右栏：操作区域 -->
@@ -961,10 +1078,10 @@
                         <span class="modal-info-label" style="width: auto; color: var(--text-1); font-weight: 600; font-size: 14px;">🎨 智能调色盘</span>
                         <button class="preset-btn reset-btn" id="resetColorBtn" title="重置为原始颜色">重置颜色</button>
                     </div>
-                    <div style="display: flex; flex-direction: column; gap: 16px; margin-bottom: 24px;">
-                        <div style="display: flex; align-items: center; gap: 12px;">
-                            <span style="font-size: 12px; color: var(--text-3); width: 60px; flex-shrink: 0;">一键预设</span>
-                            <div class="color-presets" id="colorPresets">
+                    <div style="display: flex; flex-direction: column; gap: 20px; margin-bottom: 24px;">
+                        <div style="display: flex; flex-direction: column; gap: 8px;">
+                            <span style="font-size: 12px; color: var(--text-3); font-weight: 500;">一键预设</span>
+                            <div class="color-presets" id="colorPresets" style="flex-wrap: wrap; justify-content: flex-start;">
                                 <button class="preset-btn" data-preset="#ef4444" style="background:#ef4444" title="一键替换为：警示红"></button>
                                 <button class="preset-btn" data-preset="#f59e0b" style="background:#f59e0b" title="一键替换为：活力橙"></button>
                                 <button class="preset-btn" data-preset="#fbbf24" style="background:#fbbf24" title="一键替换为：琥珀黄"></button>
@@ -977,9 +1094,9 @@
                                 <button class="preset-btn" data-preset="#475569" style="background:#475569" title="一键替换为：高级灰"></button>
                             </div>
                         </div>
-                        <div style="display: flex; align-items: flex-start; gap: 12px;">
-                            <span style="font-size: 12px; color: var(--text-3); width: 60px; flex-shrink: 0; line-height: 28px;">手动微调</span>
-                            <div class="extracted-colors" id="extractedColors" style="flex: 1;"></div>
+                        <div style="display: flex; flex-direction: column; gap: 8px;">
+                            <span style="font-size: 12px; color: var(--text-3); font-weight: 500;">手动微调</span>
+                            <div class="extracted-colors" id="extractedColors" style="width: 100%;"></div>
                         </div>
                     </div>
                 </div>
@@ -1029,6 +1146,7 @@ let currentEditedSvgString = null;
 let editingSvgOriginal = null;
 let colorMapping = {};
 let mergedColorGroups = {}; // { representativeColor: [actualColor1, actualColor2, ...] }
+let currentActiveStyle = 'all';
 
 function hexToRgb(hex) {
     hex = hex.replace(/^#/, '');
@@ -1072,15 +1190,57 @@ function parseSvgColors(svgString) {
         }
     }
 
-    const elements = svg.querySelectorAll('*');
-    elements.forEach(el => {
-        addColor(el.getAttribute('fill'));
-        addColor(el.getAttribute('stroke'));
-        addColor(el.getAttribute('stop-color'));
-        if (el.style.fill) addColor(el.style.fill);
-        if (el.style.stroke) addColor(el.style.stroke);
-        if (el.style.stopColor) addColor(el.style.stopColor);
-    });
+    const elements = Array.from(svg.querySelectorAll('*'));
+    // 逆序遍历，这样我们可以检测哪些元素被后面的（即上层的）相同几何图形覆盖了
+    const seenGeometries = new Set();
+    const activeColors = new Set();
+
+    for (let i = elements.length - 1; i >= 0; i--) {
+        const el = elements[i];
+        const tagName = el.tagName.toLowerCase();
+        
+        // 只处理具有几何属性的绘图元素
+        if (['path', 'circle', 'rect', 'ellipse', 'polygon', 'polyline'].includes(tagName)) {
+            const geo = el.getAttribute('d') || el.getAttribute('points') || 
+                        (el.getAttribute('cx') + el.getAttribute('cy') + el.getAttribute('r')) || 
+                        (el.getAttribute('x') + el.getAttribute('y') + el.getAttribute('width') + el.getAttribute('height'));
+            
+            if (geo && seenGeometries.has(geo)) {
+                // 如果这个几何图形已经在上层出现过，且上层是非透明填充，则跳过此元素的颜色提取
+                // 注意：这里简化处理，假设上层是完全覆盖
+                continue;
+            }
+            if (geo) seenGeometries.add(geo);
+        }
+
+        const localColors = new Set();
+        const addLocal = (val) => {
+            const c = extractHex(val);
+            if (c) localColors.add(c);
+        };
+
+        addLocal(el.getAttribute('fill'));
+        addLocal(el.getAttribute('stroke'));
+        addLocal(el.getAttribute('stop-color'));
+        if (el.style.fill) addLocal(el.style.fill);
+        if (el.style.stroke) addLocal(el.style.stroke);
+        if (el.style.stopColor) addLocal(el.style.stopColor);
+
+        localColors.forEach(c => rawColors.add(c));
+    }
+
+    function extractHex(val) {
+        if (!val || val === 'none' || val === 'currentColor' || val === 'transparent' || val.startsWith('url(')) return null;
+        let hex = val.toLowerCase().trim();
+        if (hex.startsWith('#')) {
+            if (hex.length === 4) hex = '#' + hex[1]+hex[1] + hex[2]+hex[2] + hex[3]+hex[3];
+            const distWhite = colorDistance(hex, '#ffffff');
+            const distBlack = colorDistance(hex, '#000000');
+            if (distWhite < 30 || distBlack < 30) return null;
+            return hex;
+        }
+        return null;
+    }
 
     // 分组逻辑：将相近颜色归类
     const all = Array.from(rawColors);
@@ -1395,6 +1555,16 @@ async function init() {
 
 
 
+    // Style filter
+    document.querySelectorAll('.style-tab').forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.querySelectorAll('.style-tab').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            currentActiveStyle = btn.dataset.style;
+            render();
+        });
+    });
+
     document.getElementById('themeToggle').addEventListener('click', toggleTheme);
 
     document.getElementById('modal').addEventListener('click', e => {
@@ -1525,7 +1695,10 @@ function render() {
             if (!icon.tags || !icon.tags.includes(currentActiveTag)) return false;
         }
         
-        // 3. Search Keyword Rule
+        // 3. Style Rule
+        if (currentActiveStyle !== 'all' && icon.style !== currentActiveStyle) return false;
+        
+        // 4. Search Keyword Rule
         return matchesSearch(icon);
     });
 
@@ -1573,7 +1746,10 @@ function render() {
 
             const svgContent = SVG_CACHE[icon.id] || `<svg viewBox="0 0 24 24" width="24" height="24"><text x="12" y="16" text-anchor="middle" font-size="12" fill="#666">?</text></svg>`;
 
+            const styleLabel = { 'outlined': '线性', 'filled': '面型', 'color': '彩色' }[icon.style] || icon.style || '默认';
+
             card.innerHTML = `
+                <div class="style-badge">${styleLabel}</div>
                 <div class="icon-preview">${svgContent}</div>
                 <div class="icon-name">${icon.name}</div>
                 <div class="card-actions">
@@ -1621,7 +1797,22 @@ function openModal(iconId) {
     document.getElementById('modalId').textContent = icon.id;
     document.getElementById('modalName').textContent = icon.name;
     document.getElementById('modalGroup').innerHTML = `<span style="color:${groupInfo.color}">${groupInfo.label}</span>`;
-    document.getElementById('modalTags').innerHTML = (icon.tags || []).map(t => `<span class="modal-tag">${t}</span>`).join('');
+    // Variations
+    const variationsEl = document.getElementById('modalVariations');
+    const variations = DATA.icons.filter(i => i.baseId === icon.baseId && i.id !== iconId);
+    
+    if (variations.length > 0) {
+        variationsEl.style.display = 'flex';
+        variationsEl.innerHTML = `
+            <div class="variation-item active" data-style="${icon.style || 'default'}">${svgContent}</div>
+            ${variations.map(v => {
+                const vSvg = SVG_CACHE[v.id] || '';
+                return `<div class="variation-item" data-style="${v.style || 'default'}" onclick="openModal('${v.id}')">${vSvg}</div>`;
+            }).join('')}
+        `;
+    } else {
+        variationsEl.style.display = 'none';
+    }
 
     const preview = document.getElementById('modalPreview');
     const svgContent = SVG_CACHE[iconId] || '';
@@ -1673,6 +1864,16 @@ function updateCodeBlock() {
     }
 
     document.getElementById('codeContent').textContent = code;
+}
+
+function copyId() {
+    const id = document.getElementById('modalId').textContent;
+    navigator.clipboard.writeText(id).then(() => {
+        const btn = document.querySelector('.copy-id-btn');
+        const oldText = btn.innerHTML;
+        btn.innerHTML = '已复制!';
+        setTimeout(() => btn.innerHTML = oldText, 2000);
+    });
 }
 
 function copyCode() {
