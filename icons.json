@@ -2488,6 +2488,34 @@
       "name": "原材料",
       "group": "appicon",
       "style": "filled"
+    },
+    {
+      "id": "submission-to-start-construction-filled",
+      "baseId": "submission-to-start-construction",
+      "name": "开工报审",
+      "group": "appicon",
+      "style": "filled"
+    },
+    {
+      "id": "construction-plan-review-filled",
+      "baseId": "construction-plan-review",
+      "name": "施工方案审查",
+      "group": "appicon",
+      "style": "filled"
+    },
+    {
+      "id": "process-record-filled",
+      "baseId": "process-record",
+      "name": "过程记录",
+      "group": "appicon",
+      "style": "filled"
+    },
+    {
+      "id": "datajiedian-filled",
+      "baseId": "datajiedian",
+      "name": "数据 节点",
+      "group": "appicon",
+      "style": "filled"
     }
   ]
 }
