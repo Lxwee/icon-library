@@ -2742,6 +2742,20 @@
       "name": "总成本预算",
       "group": "appicon",
       "style": "filled"
+    },
+    {
+      "id": "graph-filled",
+      "baseId": "graph",
+      "name": "曲线图 统计",
+      "group": "appicon",
+      "style": "filled"
+    },
+    {
+      "id": "annual-indicators-filled",
+      "baseId": "annual-indicators",
+      "name": "年度指标",
+      "group": "appicon",
+      "style": "filled"
     }
   ]
 }
