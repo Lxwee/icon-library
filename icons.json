@@ -2460,6 +2460,34 @@
       "name": "质量验收",
       "group": "appicon",
       "style": "filled"
+    },
+    {
+      "id": "mix-ratio-filled",
+      "baseId": "mix-ratio",
+      "name": "配合比",
+      "group": "appicon",
+      "style": "filled"
+    },
+    {
+      "id": "components-filled",
+      "baseId": "components",
+      "name": "构配件",
+      "group": "appicon",
+      "style": "filled"
+    },
+    {
+      "id": "equipment-filled",
+      "baseId": "equipment",
+      "name": "设备",
+      "group": "appicon",
+      "style": "filled"
+    },
+    {
+      "id": "raw-materials-filled",
+      "baseId": "raw-materials",
+      "name": "原材料",
+      "group": "appicon",
+      "style": "filled"
     }
   ]
 }
