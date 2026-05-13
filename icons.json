@@ -2574,6 +2574,13 @@
       "name": "防汛预警",
       "group": "appicon",
       "style": "filled"
+    },
+    {
+      "id": "drawing-filled",
+      "baseId": "drawing",
+      "name": "图纸",
+      "group": "appicon",
+      "style": "filled"
     }
   ]
 }
