@@ -1051,7 +1051,13 @@ function parseSvgColors(svgString) {
         let hex = val.toLowerCase().trim();
         if (hex.startsWith('#')) {
             if (hex.length === 4) hex = '#' + hex[1]+hex[1] + hex[2]+hex[2] + hex[3]+hex[3];
-            if (!skipColors.has(hex)) rawColors.add(hex);
+            
+            // 过滤掉接近白色和接近黑色的颜色（通常是背景、对勾、边框等中性色）
+            const distWhite = colorDistance(hex, '#ffffff');
+            const distBlack = colorDistance(hex, '#000000');
+            if (distWhite < 30 || distBlack < 30) return;
+            
+            rawColors.add(hex);
         }
     }
 
