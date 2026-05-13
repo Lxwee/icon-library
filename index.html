@@ -183,7 +183,6 @@
             background: var(--bg-input);
         }
 
-        /* ===== MAIN CONTENT ===== */
         .main-content {
             flex: 1;
             display: flex;
@@ -263,6 +262,13 @@
             flex: 1;
             overflow-y: auto;
             padding: 0 32px 32px 32px;
+            scroll-behavior: smooth;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+
+        .grid-container.loaded {
+            opacity: 1;
         }
         
         .grid-container > :first-child {
@@ -851,7 +857,7 @@
         </div>
 
         <nav class="sidebar-nav" id="sidebarNav">
-            <button class="nav-item active" data-group="all">
+            <button class="nav-item" data-group="all">
                 <span>⚡️ 全部分类</span>
             </button>
             <!-- Groups rendered dynamically -->
@@ -1322,10 +1328,15 @@ async function init() {
         navEl.appendChild(btn);
     }
     
-    document.querySelector('.nav-item[data-group="all"]').addEventListener('click', () => setGroup('all'));
+    const allBtn = document.querySelector('.nav-item[data-group="all"]');
+    if (allBtn) allBtn.addEventListener('click', () => setGroup('all'));
+    
+    // Restore active group state in UI immediately
+    setGroup(currentGroup);
+    document.getElementById('gridContainer').classList.add('loaded');
 
-    // Preload all SVGs
-    await preloadSVGs();
+    // Preload SVGs in background (non-blocking)
+    preloadSVGs();
 
     // Events
     document.getElementById('searchInput').addEventListener('input', e => {
@@ -1361,24 +1372,38 @@ async function init() {
         });
     });
 
-    // Restore active group state in UI
-    setGroup(currentGroup);
 }
 
 async function preloadSVGs() {
-    const promises = DATA.icons.map(async icon => {
-        const group = icon.group;
-        const url = `${BASE_URL}/icons/${group}/${icon.id}.svg`;
+    // 1. First, prioritize the icons in the CURRENTLY visible group
+    const priorityIcons = DATA.icons.filter(icon => currentGroup === 'all' || icon.group === currentGroup);
+    const otherIcons = DATA.icons.filter(icon => currentGroup !== 'all' && icon.group !== currentGroup);
+
+    async function loadIcon(icon) {
+        if (SVG_CACHE[icon.id]) return;
+        const url = `${BASE_URL}/icons/${icon.group}/${icon.id}.svg`;
         try {
             const resp = await fetch(url);
             if (resp.ok) {
                 SVG_CACHE[icon.id] = await resp.text();
+                // If this icon belongs to the current view, we might want to refresh its specific card
+                // But simple re-render or just letting it appear is usually fine.
+                const iconEl = document.querySelector(`.icon-card[data-id="${icon.id}"] .icon-preview`);
+                if (iconEl) {
+                    iconEl.innerHTML = SVG_CACHE[icon.id];
+                    // Also apply current color
+                    const svg = iconEl.querySelector('svg');
+                    if (svg) svg.style.color = document.getElementById('previewColor').value;
+                }
             }
-        } catch (e) {
-            console.warn(`Failed to load: ${url}`);
-        }
-    });
-    await Promise.all(promises);
+        } catch (e) {}
+    }
+
+    // Load priority icons first
+    await Promise.all(priorityIcons.map(loadIcon));
+    
+    // Then load the rest in the background
+    otherIcons.forEach(icon => loadIcon(icon));
 }
 
 function setGroup(group) {
