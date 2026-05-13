@@ -1064,7 +1064,7 @@ function parseSvgColors(svgString) {
         if (el.style.stopColor) addColor(el.style.stopColor);
     });
 
-    // 合并相近颜色（距离 < 40），只保留主色
+    // 合并极度相近颜色（距离 < 15），只保留主色
     const all = Array.from(rawColors);
     const merged = [];
     const used = new Set();
@@ -1072,7 +1072,7 @@ function parseSvgColors(svgString) {
         if (used.has(i)) continue;
         merged.push(all[i]);
         for (let j = i + 1; j < all.length; j++) {
-            if (!used.has(j) && colorDistance(all[i], all[j]) < 40) {
+            if (!used.has(j) && colorDistance(all[i], all[j]) < 15) {
                 used.add(j);
             }
         }
