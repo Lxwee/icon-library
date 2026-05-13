@@ -2581,6 +2581,62 @@
       "name": "图纸",
       "group": "appicon",
       "style": "filled"
+    },
+    {
+      "id": "supervision-table-filled",
+      "baseId": "supervision-table",
+      "name": "监理用表",
+      "group": "appicon",
+      "style": "filled"
+    },
+    {
+      "id": "project-overview-filled",
+      "baseId": "project-overview",
+      "name": "项目概况",
+      "group": "appicon",
+      "style": "filled"
+    },
+    {
+      "id": "approval-hetong-filled",
+      "baseId": "approval-hetong",
+      "name": "审批 合同",
+      "group": "appicon",
+      "style": "filled"
+    },
+    {
+      "id": "construction-statistics-filled",
+      "baseId": "construction-statistics",
+      "name": "施工统计",
+      "group": "appicon",
+      "style": "filled"
+    },
+    {
+      "id": "problem-management-filled",
+      "baseId": "problem-management",
+      "name": "问题管理",
+      "group": "appicon",
+      "style": "filled"
+    },
+    {
+      "id": "document-circulation-filled",
+      "baseId": "document-circulation",
+      "name": "文件流转",
+      "group": "appicon",
+      "style": "filled"
+    },
+    {
+      "id": "progress-daily-report-filled",
+      "baseId": "progress-daily-report",
+      "name": "进度日报",
+      "group": "appicon",
+      "style": "filled"
+    },
+    {
+      "id": "supervision-statistics-filled",
+      "baseId": "supervision-statistics",
+      "name": "监理统计",
+      "group": "appicon",
+      "style": "filled"
     }
   ]
 }
