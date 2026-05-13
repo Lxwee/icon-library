@@ -2637,6 +2637,34 @@
       "name": "监理统计",
       "group": "appicon",
       "style": "filled"
+    },
+    {
+      "id": "total-progress-filled",
+      "baseId": "total-progress",
+      "name": "总进度",
+      "group": "appicon",
+      "style": "filled"
+    },
+    {
+      "id": "partial-items-filled",
+      "baseId": "partial-items",
+      "name": "分部分项",
+      "group": "appicon",
+      "style": "filled"
+    },
+    {
+      "id": "progress-parameters-filled",
+      "baseId": "progress-parameters",
+      "name": "进度参数",
+      "group": "appicon",
+      "style": "filled"
+    },
+    {
+      "id": "panoramic-filled",
+      "baseId": "panoramic",
+      "name": "全景",
+      "group": "appicon",
+      "style": "filled"
     }
   ]
 }
