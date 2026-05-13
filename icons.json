@@ -2530,6 +2530,20 @@
       "name": "安全帽",
       "group": "appicon",
       "style": "outlined"
+    },
+    {
+      "id": "category-three-personnel-outlined",
+      "baseId": "category-three-personnel",
+      "name": "三类人员",
+      "group": "appicon",
+      "style": "outlined"
+    },
+    {
+      "id": "special-personnel-outlined",
+      "baseId": "special-personnel",
+      "name": "特种人员",
+      "group": "appicon",
+      "style": "outlined"
     }
   ]
 }
