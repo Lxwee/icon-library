@@ -2665,6 +2665,27 @@
       "name": "全景",
       "group": "appicon",
       "style": "filled"
+    },
+    {
+      "id": "quality-inspection-filled",
+      "baseId": "quality-inspection",
+      "name": "质量巡检",
+      "group": "appicon",
+      "style": "filled"
+    },
+    {
+      "id": "quality-acceptance-ledger-filled",
+      "baseId": "quality-acceptance-ledger",
+      "name": "质量验收台账",
+      "group": "appicon",
+      "style": "filled"
+    },
+    {
+      "id": "test-and-testing-ledger-filled",
+      "baseId": "test-and-testing-ledger",
+      "name": "试验检测台账",
+      "group": "appicon",
+      "style": "filled"
     }
   ]
 }
