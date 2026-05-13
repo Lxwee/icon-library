@@ -2439,6 +2439,27 @@
       "name": "监理记录",
       "group": "appicon",
       "style": "filled"
+    },
+    {
+      "id": "side-station-record-filled",
+      "baseId": "side-station-record",
+      "name": "旁站记录",
+      "group": "appicon",
+      "style": "filled"
+    },
+    {
+      "id": "parallel-testing-filled",
+      "baseId": "parallel-testing",
+      "name": "平行检验",
+      "group": "appicon",
+      "style": "filled"
+    },
+    {
+      "id": "quality-acceptance-filled",
+      "baseId": "quality-acceptance",
+      "name": "质量验收",
+      "group": "appicon",
+      "style": "filled"
     }
   ]
 }
