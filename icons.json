@@ -2714,6 +2714,13 @@
       "name": "隐患排查台账",
       "group": "appicon",
       "style": "filled"
+    },
+    {
+      "id": "attendance-and-clocking-in-filled",
+      "baseId": "attendance-and-clocking-in",
+      "name": "考勤打卡",
+      "group": "appicon",
+      "style": "filled"
     }
   ]
 }
