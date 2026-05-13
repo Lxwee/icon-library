@@ -374,19 +374,6 @@
             max-width: 100%;
         }
 
-        .icon-card .style-badge {
-            position: absolute;
-            top: 8px;
-            left: 8px;
-            font-size: 10px;
-            padding: 2px 6px;
-            border-radius: 4px;
-            background: var(--bg-input);
-            color: var(--text-3);
-            border: 1px solid var(--border);
-            text-transform: capitalize;
-        }
-
         .style-variation-list {
             display: flex;
             gap: 12px;
@@ -943,6 +930,60 @@
         .theme-switching, .theme-switching * {
             transition: none !important;
         }
+        .edit-meta-btn {
+            font-size: 11px;
+            padding: 3px 10px;
+            background: var(--bg-input);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            color: var(--text-2);
+            cursor: pointer;
+            transition: 0.2s;
+            margin-left: 8px;
+        }
+        .edit-meta-btn:hover { background: var(--border); color: var(--text-1); }
+        .edit-meta-btn.active { background: var(--accent); color: white; border-color: var(--accent); }
+
+        .edit-input {
+            width: 100%;
+            background: var(--bg-input);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            padding: 4px 8px;
+            font-size: 13px;
+            color: var(--text-1);
+            margin: 4px 0;
+        }
+
+        .save-meta-btn {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            cursor: pointer;
+            margin-right: 8px;
+        }
+        .cancel-meta-btn {
+            background: var(--bg-input);
+            color: var(--text-2);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            cursor: pointer;
+        }
+
+        .style-variation-title {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-2);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
     </style>
 </head>
 <body>
@@ -1024,7 +1065,10 @@
 <div class="modal-overlay" id="modal">
     <div class="modal">
         <div class="modal-header">
-            <h2 id="modalTitle">图标详情</h2>
+            <div style="display: flex; align-items: center; gap: 12px;">
+                <h2 id="modalTitle">图标详情</h2>
+                <button class="edit-meta-btn" id="editMetaBtn" onclick="toggleEditMeta()">编辑信息</button>
+            </div>
             <button class="modal-close" onclick="closeModal()">✕</button>
         </div>
         <div class="modal-body">
@@ -1045,14 +1089,30 @@
                     <div class="modal-info-row">
                         <span class="modal-info-label">名称</span>
                         <span class="modal-info-value" id="modalName"></span>
+                        <input type="text" id="editName" class="edit-input" style="display:none">
                     </div>
                     <div class="modal-info-row">
                         <span class="modal-info-label">分组</span>
                         <span class="modal-info-value" id="modalGroup"></span>
+                        <select id="editGroup" class="edit-input" style="display:none"></select>
+                    </div>
+                    <div class="modal-info-row">
+                        <span class="modal-info-label">风格</span>
+                        <span class="modal-info-value" id="modalStyle"></span>
+                        <select id="editStyle" class="edit-input" style="display:none">
+                            <option value="outlined">线性 (Outlined)</option>
+                            <option value="filled">面型 (Filled)</option>
+                            <option value="color">彩色 (Color)</option>
+                        </select>
                     </div>
                     <div class="modal-info-row">
                         <span class="modal-info-label">标签</span>
                         <span class="modal-info-value" id="modalTags"></span>
+                        <input type="text" id="editTags" class="edit-input" style="display:none" placeholder="逗号分隔">
+                    </div>
+                    <div id="editActions" style="display:none; margin-top: 12px;">
+                        <button class="save-meta-btn" onclick="saveMeta()">保存并复制 JSON</button>
+                        <button class="cancel-meta-btn" onclick="toggleEditMeta(false)">取消</button>
                     </div>
                 </div>
 
@@ -1067,7 +1127,13 @@
                     <button class="copy-btn" id="codeCopyBtn" onclick="copyCode()">复制</button>
                     <code id="codeContent"></code>
                 </div>
-                <div class="style-variation-list" id="modalVariations" style="display:none;"></div>
+                <div id="variationsContainer" style="margin-top: 24px; display:none;">
+                    <div class="style-variation-title">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v8"/><path d="m16 6-4 4-4-4"/><path d="M12 22v-8"/><path d="m8 18 4-4 4 4"/></svg>
+                        同系列风格变体
+                    </div>
+                    <div class="style-variation-list" id="modalVariations"></div>
+                </div>
             </div>
 
             <!-- 右栏：操作区域 -->
@@ -1749,7 +1815,6 @@ function render() {
             const styleLabel = { 'outlined': '线性', 'filled': '面型', 'color': '彩色' }[icon.style] || icon.style || '默认';
 
             card.innerHTML = `
-                <div class="style-badge">${styleLabel}</div>
                 <div class="icon-preview">${svgContent}</div>
                 <div class="icon-name">${icon.name}</div>
                 <div class="card-actions">
@@ -1797,22 +1862,27 @@ function openModal(iconId) {
     document.getElementById('modalId').textContent = icon.id;
     document.getElementById('modalName').textContent = icon.name;
     document.getElementById('modalGroup').innerHTML = `<span style="color:${groupInfo.color}">${groupInfo.label}</span>`;
-    // Variations
+    const styleLabel = { 'outlined': '线性', 'filled': '面型', 'color': '彩色' }[icon.style] || icon.style || '默认';
+    document.getElementById('modalStyle').textContent = styleLabel;
+    document.getElementById('modalTags').innerHTML = (icon.tags || []).map(t => `<span class="modal-tag">${t}</span>`).join('');
+
+    // variations
     const variationsEl = document.getElementById('modalVariations');
-    const variations = DATA.icons.filter(i => i.baseId === icon.baseId && i.id !== iconId);
+    const containerEl = document.getElementById('variationsContainer');
+    const variations = DATA.icons.filter(i => i.baseId === icon.baseId && i.baseId);
     
-    if (variations.length > 0) {
-        variationsEl.style.display = 'flex';
-        variationsEl.innerHTML = `
-            <div class="variation-item active" data-style="${icon.style || 'default'}">${svgContent}</div>
-            ${variations.map(v => {
-                const vSvg = SVG_CACHE[v.id] || '';
-                return `<div class="variation-item" data-style="${v.style || 'default'}" onclick="openModal('${v.id}')">${vSvg}</div>`;
-            }).join('')}
-        `;
+    if (variations.length > 1) {
+        containerEl.style.display = 'block';
+        variationsEl.innerHTML = variations.map(v => {
+            const vSvg = SVG_CACHE[v.id] || '';
+            const isActive = v.id === iconId;
+            return `<div class="variation-item ${isActive ? 'active' : ''}" data-style="${v.style || 'default'}" onclick="openModal('${v.id}')">${vSvg}</div>`;
+        }).join('');
     } else {
-        variationsEl.style.display = 'none';
+        containerEl.style.display = 'none';
     }
+
+    toggleEditMeta(false); // Reset edit state
 
     const preview = document.getElementById('modalPreview');
     const svgContent = SVG_CACHE[iconId] || '';
@@ -1873,6 +1943,61 @@ function copyId() {
         const oldText = btn.innerHTML;
         btn.innerHTML = '已复制!';
         setTimeout(() => btn.innerHTML = oldText, 2000);
+    });
+}
+
+let isEditingMeta = false;
+function toggleEditMeta(show) {
+    isEditingMeta = typeof show === 'boolean' ? show : !isEditingMeta;
+    const modal = document.getElementById('modal');
+    const displays = modal.querySelectorAll('.modal-info-value');
+    const inputs = modal.querySelectorAll('.edit-input');
+    const actions = document.getElementById('editActions');
+    const editBtn = document.getElementById('editMetaBtn');
+
+    if (isEditingMeta) {
+        const icon = DATA.icons.find(i => i.id === currentIconId);
+        document.getElementById('editName').value = icon.name;
+        document.getElementById('editTags').value = (icon.tags || []).join(', ');
+        document.getElementById('editStyle').value = icon.style || 'outlined';
+        
+        // Build groups select
+        const groupSelect = document.getElementById('editGroup');
+        groupSelect.innerHTML = Object.entries(DATA.groups).map(([k, v]) => 
+            `<option value="${k}" ${k === icon.group ? 'selected' : ''}>${v.label}</option>`
+        ).join('');
+
+        displays.forEach(d => d.style.display = 'none');
+        inputs.forEach(i => i.style.display = 'block');
+        actions.style.display = 'block';
+        editBtn.classList.add('active');
+        editBtn.textContent = '正在编辑...';
+    } else {
+        displays.forEach(d => d.style.display = 'block');
+        inputs.forEach(i => i.style.display = 'none');
+        actions.style.display = 'none';
+        editBtn.classList.remove('active');
+        editBtn.textContent = '编辑信息';
+    }
+}
+
+function saveMeta() {
+    const icon = DATA.icons.find(i => i.id === currentIconId);
+    if (!icon) return;
+
+    icon.name = document.getElementById('editName').value;
+    icon.group = document.getElementById('editGroup').value;
+    icon.style = document.getElementById('editStyle').value;
+    icon.tags = document.getElementById('editTags').value.split(',').map(t => t.trim()).filter(t => t);
+
+    // Update UI
+    openModal(currentIconId);
+    render();
+
+    // Copy updated JSON entry to clipboard
+    const jsonStr = JSON.stringify(icon, null, 2);
+    navigator.clipboard.writeText(jsonStr).then(() => {
+        alert('修改已在当前页面生效！更新后的 JSON 已复制到剪贴板，请手动更新 icons.json 文件。');
     });
 }
 
