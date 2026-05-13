@@ -2721,6 +2721,13 @@
       "name": "考勤打卡",
       "group": "appicon",
       "style": "filled"
+    },
+    {
+      "id": "team-user-individual-user-filled",
+      "baseId": "team-user-individual-user",
+      "name": "团队 用户 个人 user",
+      "group": "appicon",
+      "style": "filled"
     }
   ]
 }
