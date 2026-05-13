@@ -987,28 +987,32 @@
       "baseId": "all-people",
       "name": "全部人员",
       "group": "statisticscardicon",
-      "style": "color"
+      "style": "color",
+      "tags": []
     },
     {
       "id": "personnel-on-duty-color",
       "baseId": "personnel-on-duty",
       "name": "在岗人员",
       "group": "statisticscardicon",
-      "style": "color"
+      "style": "color",
+      "tags": []
     },
     {
       "id": "exit-personnel-color",
       "baseId": "exit-personnel",
       "name": "退场人员",
       "group": "statisticscardicon",
-      "style": "color"
+      "style": "color",
+      "tags": []
     },
     {
       "id": "full-time-safety-production-management-personnel-color",
       "baseId": "full-time-safety-production-management-personnel",
       "name": "专职安全生产管理人员",
       "group": "statisticscardicon",
-      "style": "color"
+      "style": "color",
+      "tags": []
     },
     {
       "id": "project-leader-color",
@@ -1274,7 +1278,8 @@
       "baseId": "personnel",
       "name": "人员",
       "group": "statisticscardicon",
-      "style": "color"
+      "style": "color",
+      "tags": []
     },
     {
       "id": "technical-issues-color",
@@ -2174,7 +2179,8 @@
       "baseId": "personnel-positioning",
       "name": "人员定位",
       "group": "smartconstructionsite",
-      "style": "outlined"
+      "style": "outlined",
+      "tags": []
     },
     {
       "id": "labor-real-name-system-outlined",
@@ -2347,7 +2353,8 @@
       "baseId": "address-book",
       "name": "通讯录 团队 人员",
       "group": "appicon",
-      "style": "filled"
+      "style": "filled",
+      "tags": []
     },
     {
       "id": "knowledge-base-filled",
@@ -2534,16 +2541,18 @@
     {
       "id": "category-three-personnel-outlined",
       "baseId": "category-three-personnel",
-      "name": "三类人员",
+      "name": "三类人员查询",
       "group": "appicon",
-      "style": "outlined"
+      "style": "outlined",
+      "tags": []
     },
     {
       "id": "special-personnel-outlined",
       "baseId": "special-personnel",
-      "name": "特种人员",
+      "name": "特种人员查询",
       "group": "appicon",
-      "style": "outlined"
+      "style": "outlined",
+      "tags": []
     },
     {
       "id": "daily-inquiry-filled",
