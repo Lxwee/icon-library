@@ -965,14 +965,15 @@
                         <div style="display: flex; align-items: center; gap: 12px;">
                             <span style="font-size: 12px; color: var(--text-3); width: 60px; flex-shrink: 0;">一键预设</span>
                             <div class="color-presets" id="colorPresets">
-                                <button class="preset-btn" data-preset="#6366f1" style="background:#6366f1" title="一键替换为：科技蓝"></button>
-                                <button class="preset-btn" data-preset="#10b981" style="background:#10b981" title="一键替换为：成功绿"></button>
                                 <button class="preset-btn" data-preset="#ef4444" style="background:#ef4444" title="一键替换为：警示红"></button>
                                 <button class="preset-btn" data-preset="#f59e0b" style="background:#f59e0b" title="一键替换为：活力橙"></button>
-                                <button class="preset-btn" data-preset="#8b5cf6" style="background:#8b5cf6" title="一键替换为：魅力紫"></button>
-                                <button class="preset-btn" data-preset="#0ea5e9" style="background:#0ea5e9" title="一键替换为：天空蓝"></button>
-                                <button class="preset-btn" data-preset="#ec4899" style="background:#ec4899" title="一键替换为：亮粉色"></button>
+                                <button class="preset-btn" data-preset="#fbbf24" style="background:#fbbf24" title="一键替换为：琥珀黄"></button>
+                                <button class="preset-btn" data-preset="#10b981" style="background:#10b981" title="一键替换为：成功绿"></button>
                                 <button class="preset-btn" data-preset="#14b8a6" style="background:#14b8a6" title="一键替换为：薄荷绿"></button>
+                                <button class="preset-btn" data-preset="#0ea5e9" style="background:#0ea5e9" title="一键替换为：天空蓝"></button>
+                                <button class="preset-btn" data-preset="#6366f1" style="background:#6366f1" title="一键替换为：科技蓝"></button>
+                                <button class="preset-btn" data-preset="#8b5cf6" style="background:#8b5cf6" title="一键替换为：魅力紫"></button>
+                                <button class="preset-btn" data-preset="#ec4899" style="background:#ec4899" title="一键替换为：亮粉色"></button>
                                 <button class="preset-btn" data-preset="#475569" style="background:#475569" title="一键替换为：高级灰"></button>
                             </div>
                         </div>
@@ -1174,13 +1175,17 @@ function applyPresetColor(targetHex) {
     // 1. 按照原始亮度对提取到的颜色进行排序（从暗到亮）
     const sortedOrigColors = [...colors].sort((a, b) => getLuminance(a) - getLuminance(b));
     
-    // 2. 根据排序后的顺序，依次分配新颜色
-    // 为了保持原本的对比方向（比如上浅下深），我们将 targetHex 作为“最深色”，然后依次变亮
+    // 2. 动态计算亮度步进，防止颜色过多时最后一个颜色变得太浅
+    // 我们将总亮度跨度限制在 50 以内
+    const maxSpan = 50;
+    const step = sortedOrigColors.length > 1 ? maxSpan / (sortedOrigColors.length - 1) : 0;
+
+    // 3. 根据排序后的顺序，依次分配新颜色
     sortedOrigColors.forEach((origCol, idx) => {
         let newColor = targetHex;
         if (idx > 0) {
-            // idx 越大，颜色越亮
-            newColor = adjustColor(targetHex, idx * 30); 
+            // idx 越大，颜色越亮，步进基于总颜色数动态调整
+            newColor = adjustColor(targetHex, idx * step); 
         }
         colorMapping[origCol] = newColor;
     });
