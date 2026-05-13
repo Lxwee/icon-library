@@ -2516,6 +2516,20 @@
       "name": "数据 节点",
       "group": "appicon",
       "style": "filled"
+    },
+    {
+      "id": "yuanchengxunjian-outlined",
+      "baseId": "yuanchengxunjian",
+      "name": "远程巡检",
+      "group": "appicon",
+      "style": "outlined"
+    },
+    {
+      "id": "helmet-outlined",
+      "baseId": "helmet",
+      "name": "安全帽",
+      "group": "appicon",
+      "style": "outlined"
     }
   ]
 }
