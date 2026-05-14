@@ -163,6 +163,19 @@
         [data-theme="dark"] .nav-item .badge { background: rgba(255,255,255,0.1); color: var(--text-2); }
         [data-theme="dark"] .nav-item.active .badge { background: rgba(0,0,0,0.3); color: #fff; }
 
+        .nav-dot {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-right: 8px;
+            box-shadow: 0 0 0 1px transparent;
+            transition: box-shadow 0.2s;
+        }
+        .nav-item.active .nav-dot {
+            box-shadow: 0 0 0 1.5px rgba(255, 255, 255, 0.6);
+        }
+
         .dev-docs-btn {
             display: flex;
             align-items: center;
@@ -634,13 +647,16 @@
         .style-filter {
             display: flex;
             background: var(--bg-input);
-            padding: 2px;
+            padding: 3px;
             border-radius: 8px;
             border: 1px solid var(--border);
             margin-right: 12px;
+            height: 36px;
+            box-sizing: border-box;
+            align-items: stretch;
         }
         .style-tab {
-            padding: 4px 12px;
+            padding: 0 12px;
             border: none;
             background: transparent;
             color: var(--text-3);
@@ -648,6 +664,8 @@
             cursor: pointer;
             border-radius: 6px;
             transition: 0.2s;
+            display: flex;
+            align-items: center;
         }
         .style-tab:hover { color: var(--text-2); }
         .style-tab.active {
@@ -1531,7 +1549,7 @@ async function init() {
         const count = DATA.icons.filter(ic => ic.group === key).length;
         
         btn.innerHTML = `
-            <span><span style="display:inline-block; width:10px; height:10px; border-radius:50%; background:${group.color}; margin-right:8px;"></span>${group.label}</span>
+            <span><span class="nav-dot" style="background:${group.color};"></span>${group.label}</span>
             <span class="badge">${count}</span>
         `;
         btn.addEventListener('click', () => setGroup(key));
@@ -1548,10 +1566,18 @@ async function init() {
     // Preload SVGs in background (non-blocking)
     preloadSVGs();
 
-    // Events
-    document.getElementById('searchInput').addEventListener('input', e => {
+    // Search Logic
+    const searchInput = document.getElementById('searchInput');
+    
+    searchInput.addEventListener('input', e => {
         currentSearch = e.target.value.trim().toLowerCase();
         render();
+    });
+
+    searchInput.addEventListener('focus', function() {
+        if (this.value) {
+            this.select();
+        }
     });
 
     document.getElementById('previewColor').addEventListener('input', e => {
