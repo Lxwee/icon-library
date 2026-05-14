@@ -646,11 +646,10 @@
         }
         .style-filter {
             display: flex;
-            background: var(--bg-input);
+            background: var(--bg-surface);
             padding: 3px;
-            border-radius: 8px;
+            border-radius: var(--radius);
             border: 1px solid var(--border);
-            margin-right: 12px;
             height: 36px;
             box-sizing: border-box;
             align-items: stretch;
@@ -662,16 +661,15 @@
             color: var(--text-3);
             font-size: 12px;
             cursor: pointer;
-            border-radius: 6px;
+            border-radius: calc(var(--radius) - 3px);
             transition: 0.2s;
             display: flex;
             align-items: center;
         }
         .style-tab:hover { color: var(--text-2); }
         .style-tab.active {
-            background: var(--bg-surface);
-            color: var(--accent);
-            box-shadow: var(--shadow);
+            background: var(--bg-input);
+            color: var(--text-1);
         }
 
         /* 统一弹窗次级按钮样式 */
